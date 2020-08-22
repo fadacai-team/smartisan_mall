@@ -1,0 +1,23 @@
+.cart_item{
+    padding:.6rem 0;
+    border: 1px solid;
+    .checkbox_container{
+        height: 100%;
+        width: 44px;
+        text-align: center;
+        .check_btn, .active{
+            display: inline-block;
+            line-height: 0;
+            height: 23px;
+            width: 23px;
+            background: url(//static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
+            background-size: 100% auto;
+        }
+        .check_btn{
+            background-position: 0 -80px;
+        }
+        .active{
+            background-position: none;
+        }
+    }
+}
