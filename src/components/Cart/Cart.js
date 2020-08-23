@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import CartItem from './CartItem/CartItem'
 import { connect } from 'react-redux'
 
@@ -11,10 +11,11 @@ const Cart = () => {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.getIn(['cartReducer','CartItems']))
     return  { cartlist : state}
 }
 const mapDispatchToProps = dispatch => ({
     
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Cart)
+export default connect(mapStateToProps,null)(Cart)
