@@ -1,6 +1,7 @@
 .cart_item{
     padding:.6rem 0;
     border: 1px solid;
+    display: flex;
     .checkbox_container{
         height: 100%;
         width: 44px;
@@ -20,4 +21,8 @@
             background-position: none;
         }
     }
+    .cart_item_wraper{
+        flex: 1;
+    }
+
 }

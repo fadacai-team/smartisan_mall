@@ -7,7 +7,7 @@ export default function CartItem() {
             <div className={style.checkbox_container}>
                 <span className={style.check_btn}></span>
             </div>
-            <div>
+            <div className={style}>
 
             </div>
         </div>
