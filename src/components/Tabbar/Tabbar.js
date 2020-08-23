@@ -55,7 +55,6 @@ import  './Tabbar.css'
                                     >
                                 </TabBar.Item>
                     })
-
                 }
             </TabBar>
         </div>
