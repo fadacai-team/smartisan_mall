@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
 import CartItem from './CartItem/CartItem'
-export default class Cart extends Component {
-    render() {
-        return (
-            <div>
-                <CartItem></CartItem>
-            </div>
-        )
-    }
+import { connect } from 'react-redux'
+
+const Cart = () => {
+    return (
+        <div>
+            <CartItem></CartItem>
+        </div>
+    )
 }
+
+const mapStateToProps = (state) => {
+    return  { cartlist : state}
+}
+const mapDispatchToProps = dispatch => ({
+    
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)
