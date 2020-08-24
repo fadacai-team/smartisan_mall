@@ -4,11 +4,15 @@ import Category from './components/Category/Category'
 import Cart from './components/Cart/Cart'
 import My from './components/My/My'
 import Tabbar from './components/Tabbar/Tabbar'
-import PageNotFind from './components/PageNotFind/PageNotFind'
+// import PageNotFind from './components/PageNotFind/PageNotFind'
 import config from './Router/config'
 import RouterView from './Router/index'
 import './App.css'
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
+import { 
+    HashRouter as Router, 
+    Route, 
+    // Redirect 
+} from 'react-router-dom'
 export default class App extends Component {
     render() {
         return <div>
