@@ -15,13 +15,13 @@ const routes = [
     },{
         path:'/cart',
         component:Cart,
-       
+        
     },{
         path:'/my',
         component:My,
     },
     {
-        path:'/regist',
+        path:'/my/regist',
         component:Regist,
     },
 ]
