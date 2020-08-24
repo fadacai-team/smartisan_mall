@@ -27,10 +27,6 @@ const routes = [
         component:Home,
      
     },{
-        path:'/category',
-        component:Category,
-       
-    },{
         path:'/cart',
         component:Cart,
         
