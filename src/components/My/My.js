@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Login from "./login/login"
-import "./My.scss"
+import styles from"./My.module.scss"
 import List from "./login/List"
 export default class My extends Component {
     constructor(props){
@@ -35,9 +35,9 @@ export default class My extends Component {
     }
     render() {
         return (
-            <div className="my">
-                <div className="title">个人中心</div>
-                <div className="content">
+            <div className={styles.my}>
+                <div className={styles.title}>个人中心</div>
+                <div className={styles.content}>
                 <Login></Login>
                 {/* List一键循环 */}
                     {
