@@ -22,7 +22,6 @@ export default class App extends Component {
                     <Route exact path='/category' render={()=><Tabbar><Category></Category></Tabbar>}></Route>
                     <Route exact path='/cart' render={()=><Tabbar><Cart></Cart></Tabbar>}></Route>
                     <Route exact path='/my' render={()=><Tabbar><My></My></Tabbar>}></Route>
-                    <Route exact path='/my/regist' render={()=><Regist></Regist>}></Route>
                     <Route exact path='/404' render={()=><PageNotFind></PageNotFind>}></Route>
                     {/* <Redirect to='/404'></Redirect> */}
                     {/* <Route exact path='/404' render={()=><PageNotFind></PageNotFind>}></Route> */}
