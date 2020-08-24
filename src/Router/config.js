@@ -1,26 +1,18 @@
-import Home from '../components/Home/Home'
-import Category from '../components/Category/Category'
-import Cart from '../components/Cart/Cart'
-import My from '../components/My/My'
+// import Home from '../components/Home/Home'
+import List from '../components/list/List'
+import SearchBar from '../components/SearchBar/SearchBar'
+
 
 const routes = [
-    {
-        path:'/home',
-        component:Home,
-        children:[]
-    },{
-        path:'/category',
-        component:Category,
-        children:[]
-    },{
-        path:'/cart',
-        component:Cart,
-        children:[]
-    },{
-        path:'/my',
-        component:My,
-        children:[]
-    }
+   {
+       path:'/list',
+       component:List,
+       children:[]
+   },{
+       path:'/search',
+       component:SearchBar,
+       children:[]
+   }
 ]
 
 

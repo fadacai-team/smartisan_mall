@@ -1,0 +1,43 @@
+.cart_item{
+    padding:.6rem 0;
+    border: 1px solid;
+    display: flex;
+    .checkbox_container{
+        width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .check_btn, .active{
+            display: inline-block;
+            line-height: 0;
+            height: 23px;
+            width: 23px;
+            margin:auto;
+            background: url(//static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
+            background-size: 100% auto;
+        }
+        .check_btn{
+            background-position: 0 -80px;
+        }
+        .active{
+            background-position: none;
+        }
+    }
+    .cart_item_wraper{
+        flex: 1;
+        display: flex;
+        .item_thumb{
+            height: 90px;
+            width: 90px;
+            flex: 0 0 90px;
+            img{
+                width: 90px;
+                height: 90px;
+            }
+        }
+        .item_info_wraper{
+            
+        }
+    }
+
+}
