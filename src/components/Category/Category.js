@@ -8,7 +8,8 @@ class Category extends Component {
         return (
             <div className={categroyStyle.categroy}>
                 <div className={categroyStyle.categroyHeader}>
-                    <input text="text" className={categroyStyle.categroySearch}/>
+                    <input text="text" className={categroyStyle.categroySearch} placeholder="请输入搜索关键字"/>
+                    <span className={categroyStyle.categroyIcon}></span>
                     <div className={categroyStyle.categroyClick} onClick={this.han}></div>
                 </div>
                 <div className={categroyStyle.categroyContent}>
