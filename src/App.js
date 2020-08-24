@@ -9,7 +9,11 @@ import Regist from './components/My/regist/Regist'
 import config from './Router/config'
 import RouterView from './Router/index'
 import './App.css'
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
+import { 
+    HashRouter as Router, 
+    Route, 
+    // Redirect 
+} from 'react-router-dom'
 export default class App extends Component {
     render() {
         return <div>
