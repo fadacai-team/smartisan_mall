@@ -12,6 +12,31 @@ class SearchBar extends Component {
         keyWords:'',
         keyData:[]
     }
+    getsearchList(){
+        if(!this.state.keyWords){
+            // console.log(this.state.keyData)
+            return ''
+        }else{
+            let newKeyData = []
+            this.state.keyData.map((v,i)=>{
+                if(v.indexOf(this.state.keyWords)>-1){
+                    // console.log(v.indexOf(this.state.keyWords))
+                    newKeyData= v.slice(this.state.keyWords)
+                    // newKeyData.join('')
+                    // console.log(newKeyData.join(''))
+                    console.log(newKeyData,i)
+                }
+            })
+            // console.log(this.state.keyData)
+            let liList = this.state.keyData.map((v,i)=>{return (<li key={i}>{v}</li>)})
+            return (
+                <ul className={styles.search_matching_warp}>
+                    {liList}
+                </ul>
+            )
+            
+        }
+    }
     componentDidMount(){
         axios.get('/v1/search/hot-words').then((data)=>{
             // console.log(data.hot)
@@ -43,7 +68,9 @@ class SearchBar extends Component {
                                         axios.get('/v1/search/suggest?keyword='+this.state.keyWords).then((data)=>{
                                             // console.log(data)
                                             this.setState({keyData:data.data})
-                                            console.log(this.state.keyData)
+                                            // console.log(this.state.keyData)
+                                            
+
                                         })
                                     }}
                                     ></input>
@@ -53,20 +80,16 @@ class SearchBar extends Component {
                                 }}>取消</span>
                             </div>
                         </div>
-                        <ul className={styles.search_matching_warp}>
-                            {this.state.keyData.map((v,i)=>{
-                                return (
-                                <li key={i}>{v}</li>
-                                )
-                            })}
-                        </ul>
+                        {
+                            this.getsearchList() 
+                        }
                     </div>
                     <div className={styles.hot_list}>
                         <h4>热门搜索</h4>
                         <ul>
                             {this.state.data.map((v,i)=>{
                                 return (
-                                <li key={i}><span></span></li>
+                                <li key={i}>{v}</li>
                                 )
                             })}
                         </ul>
