@@ -14,6 +14,86 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    .select_info{
+        height: -webkit-fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        span{
+            color: #999;
+            margin-left: 8px;
+            i{
+                font-weight: 900;
+                font-size: .7rem;
+            }
+        }
+        .check_outer{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .checkbox_on{
+                position: relative;
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+                background: url(http://static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
+                background-size: 100% auto;
+                background-position: 0 -80px;
+            }
+            .checkbox{
+                position: relative;
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+                background: url(http://static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
+                background-size: 100% auto;
+                background-position: 0 -80px;
+            }
+        }
+    }
+    .sum_info{
+        margin-right: 120px;
+        .desc{
+            .total_price{
+                font-weight: 700;
+                color: #333;
+                z-index: 10;
+                position: relative;
+                font-size: 10px;
+                span{
+                    color: #d44d44;
+                    font-size: 12px;
+                }
+            }
+            .delivery{
+                margin-top: 8px;
+            }
+        }
+        .blue_btn{
+            position: absolute;
+            width: 110px;
+            right: 11px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            font-weight: 700;
+            height: 40px;
+            line-height: 40px;
+            box-shadow: inset 0 -1px 1px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.2);
+            font-size: 14px;
+            display: block;
+            background: #5e8bdd;
+            background: linear-gradient(#6f94e8,#5178df);
+            border-radius: 6px;
+            text-align: center;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+            color: #fff;
+        }
+        .blue_btn.disable{
+            background: #a9a9a9;
+            background: linear-gradient(#bfbfbf,#999);
+        }
+    }
 }
 .bottom_bar::before,.bottom_bar::after{
     content: "";
