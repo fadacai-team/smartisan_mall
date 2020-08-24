@@ -16,9 +16,6 @@ const routes = [
         path:'/cart',
         component:Cart,
         
-    },{
-        path:'/my',
-        component:My,
     },
     {
         path:'/my/regist',
