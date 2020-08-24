@@ -1,6 +1,5 @@
 .cart_item{
     padding:.6rem 0;
-    border: 1px solid;
     display: flex;
     .checkbox_container{
         width: 44px;
@@ -20,12 +19,14 @@
             background-position: 0 -80px;
         }
         .active{
-            background-position: none;
+            background-position: 0 0;
         }
     }
     .cart_item_wraper{
         flex: 1;
         display: flex;
+        align-items: center;
+        position: relative;
         .item_thumb{
             height: 90px;
             width: 90px;
@@ -36,7 +37,42 @@
             }
         }
         .item_info_wraper{
-            
+            flex: 1;
+            margin-left: 13px;
+            padding: 4px 5px 4px 0;
+            position: relative;
+            .colorful_tag_container{
+                max-height: 20px;
+            }
+            .title{
+                font-size: .6rem;
+            }
+            .item_attrs{
+                font-size: .5rem;
+                color: #7f7f7f;
+                overflow: hidden;
+                margin: 7px 0;
+            }
+            .price{
+                color: #d44d44;
+                font-size: .6rem;
+                font-weight: 700;
+                position: relative;
+                top: -4px;
+                .count{
+                    color: #999;
+                    position: relative;
+                    padding-left: 14px;
+                    margin-left: 8px;
+                    display: inline-block;
+                }
+                .count::before{
+                    content: "E";
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                }
+            }
         }
     }
 

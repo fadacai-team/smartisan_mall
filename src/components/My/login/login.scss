@@ -1,0 +1,52 @@
+
+  .login {
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      border-radius: .4rem;
+      box-shadow: 0 5px 13px rgba(0,0,0,.05);
+      margin-bottom: .65rem;
+      margin-top: .25rem;
+    .loginTop {
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    .loginLeft{
+        display: flex;
+        align-items: center;
+        .userImg {
+          
+            img {
+                width: 2.9rem;
+                height: 2.9rem;
+            }
+          }
+      
+          .loginText {
+          padding-left: .9rem;
+            font-size: 18px;
+            font-weight: 700;
+          }
+    }
+  
+      .loginRight {
+        
+      }
+    }
+  
+    .menu {
+     
+    }
+  }
+  .not-square-grid .am-grid-icon {
+    width: 40px;
+    height: 60px;
+  }
+  .not-square-grid .am-grid-text{
+    color: rgba(0,0,0,.4);
+    font-weight: 700;
+    line-height: .65rem;
+    margin-top: .2rem;
+    display: block;
+  }
