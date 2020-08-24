@@ -5,6 +5,7 @@ import Cart from './components/Cart/Cart'
 import My from './components/My/My'
 import Tabbar from './components/Tabbar/Tabbar'
 import PageNotFind from './components/PageNotFind/PageNotFind'
+import Regist from './components/My/regist/Regist'
 import './App.css'
 import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
 export default class App extends Component {
@@ -15,8 +16,9 @@ export default class App extends Component {
                     <Route exact path='/category' render={()=><Tabbar><Category></Category></Tabbar>}></Route>
                     <Route exact path='/cart' render={()=><Tabbar><Cart></Cart></Tabbar>}></Route>
                     <Route exact path='/my' render={()=><Tabbar><My></My></Tabbar>}></Route>
+                    <Route exact path='/my/regist' render={()=><Regist></Regist>}></Route>
                     <Route exact path='/404' render={()=><PageNotFind></PageNotFind>}></Route>
-                    <Redirect to='/404'></Redirect>
+                    {/* <Redirect to='/404'></Redirect> */}
                 </Router>
 
             </div>
