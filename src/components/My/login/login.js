@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./login.scss"
+import styles from "./login.module.scss"
 import {Grid} from "antd-mobile"
 import {HashRouter as Router,Link} from "react-router-dom"
 
@@ -15,17 +15,17 @@ export default class login extends Component {
     render() {
         return (
            <Router>
-                <div className="login">
-                <div className="loginTop">
-                    <div className="loginLeft">
-                        <div className="userImg">
+                <div className={styles.login}>
+                <div className={styles.loginTop}>
+                    <div className={styles.loginLeft}>
+                        <div className={styles.userImg}>
                             <img src="https://static.smartisanos.cn/mobilenew/img/head.4b81d150.png"></img>
                         </div>
-                        <Link className="loginText" to="/my/regist">登录/注册</Link>
+                        <Link className={styles.loginText} to="/my/regist">登录/注册</Link>
                     </div>
-                    <div className="loginRight">{">"}</div>
+                    <div className={styles.loginRight}>{">"}</div>
                 </div>
-                <div className="menu">
+                <div className={styles.menu}>
                     <GridExample></GridExample>
                 </div>
             </div>
