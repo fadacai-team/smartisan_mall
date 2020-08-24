@@ -1,0 +1,33 @@
+.list {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: .4rem;
+    box-shadow: 0 5px 13px rgba(0,0,0,.05);
+    margin-bottom: .65rem;
+    margin-top: .25rem;
+    .listItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+        &:after{
+            content: '';
+            height: 1px;
+            border-bottom: 1px solid #F4F4F4;
+            display: block;
+        }
+        .info{
+            display: flex;
+            padding: .9rem;
+            justify-content: space-between;
+            position: relative;
+            .listItemLeft {
+  
+            }
+        
+            .listItemRight {
+        
+            }
+        }
+    }
+  }

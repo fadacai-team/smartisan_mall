@@ -4,8 +4,8 @@ import {withRouter} from 'react-router-dom'
 import  './Tabbar.css'
 
  const MyTabBar =(props)=>{
-    const [hidden, setHidden] = useState(false)
-    const [tabBar, setTabBar] = useState([
+    const [hidden] = useState(false)
+    const [tabBar] = useState([
         {
             title:'首页',
             pageText:'Home',
