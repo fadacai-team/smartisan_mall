@@ -24,7 +24,6 @@ const Cart = (props) => {
         ids =  props.cartIdList.map(v=>{
             return v.get('goods_code')
         }).join(',')
-        console.log(ids)
         var url = '/product/skus?ids='+ids+'&with_stock=true&with_spu=true'
         axios.get(url).then(res=>{
             props.setListData(res.data.list)

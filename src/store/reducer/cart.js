@@ -24,7 +24,6 @@ export default function(state = cartState, action){
         case UPDATE_CART_CODE_LIST:
             var newcodelist =  state.get('cartCodeList').map(v=>{
                 return Map(v).set('gifts', state.get('promotions').filter(pv=>{
-                    console.log(pv.getIn(['rule','condition','main_skus']).includes(v.get('goods_code')) )
                     return pv.getIn(['rule','condition','main_skus']).includes(v.get('goods_code')) 
                 }))
             })
