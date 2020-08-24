@@ -24,7 +24,7 @@ export default class Regist extends Component {
       }
 
     handleSubmit(){
-      
+    
     }
     
    
