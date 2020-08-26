@@ -3,13 +3,30 @@ import Title from "../order/Title"
 import styles from "./Address.module.scss"
 import { List,Checkbox,Flex } from 'antd-mobile';
 import {withRouter} from "react-router-dom"
+import axios from "../../../Utils/myaxios"
 const AgreeItem = Checkbox.AgreeItem;
  class Address extends Component {
     constructor(props){
         super(props)
     }
     handleCheckButton(){
-        this.props.history.go(-1)
+        let params = new URLSearchParams();
+        params.append('name', "木子李");
+        params.append('number',15179136010);
+        params.append('province','江西省');
+        params.append('city','南昌市');
+        params.append('county','青山湖区');
+        params.append('county','青山湖区');
+        params.append('details','八一广场101号');
+        params.append('time',new Date().getTime()/1000);
+        axios.post("http://119.29.81.194/data/showAddress.php",params)
+        .then(res=>{//如果返回为真，跳转至个人中心
+            console.log(res);
+
+        }).catch(err=>{
+            console.log(err);
+        })
+        // this.props.history.go(-1)
     }
     
     render() {

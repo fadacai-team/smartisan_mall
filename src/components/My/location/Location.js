@@ -32,7 +32,7 @@ import "./Location.scss"
                             </div>
                         </div>
                        
-                            <i class="changeAddress">
+                            <i className="changeAddress">
                            
                             </i>
        
