@@ -15,11 +15,6 @@ class Category extends Component {
     }
     
     getDataHandle = (data,index,e) => {
-        // this.state.listData.forEach((item) => {
-        //     item.isActive = ''
-        // })
-        // console.log('111111111111',this.state.itemData)
-        // this.state.listData[index].isActive = 'active'
         var newListData = this.state.listData
         newListData.forEach((item) => {
             item.isActive = ''
@@ -32,6 +27,10 @@ class Category extends Component {
         
     }
     
+    goToSearch = () => {
+        this.props.history.push('/search')
+    }
+    
 
     render() {
         console.log(this.state.itemData)
@@ -40,7 +39,7 @@ class Category extends Component {
                 <div className={categroyStyle.categroyHeader}>
                     <input text="text" className={categroyStyle.categroySearch} placeholder="请输入搜索关键字"/>
                     <span className={categroyStyle.categroyIcon}></span>
-                    <div className={categroyStyle.categroyClick} onClick={this.han}></div>
+                    <div className={categroyStyle.categroyClick} onClick={this.goToSearch}></div>
                 </div>
                 <div className={categroyStyle.categroyContent}>
                     <div className={categroyStyle.contentLeft}>
