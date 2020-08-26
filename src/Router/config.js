@@ -2,6 +2,8 @@ import List from '../components/list/List'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Detail from '../components/Datail'
 import Regist from '../components/My/regist/Regist'
+import GoodList from '../components/GoodList/GoodList'
+import Order from '../components/Cart/Order'
 const routes = [
     {
         path:'/list',
@@ -21,8 +23,16 @@ const routes = [
     {
         path:'/my/regist',
         component:Regist,
+    },
+    {
+        path:'/goodlist',
+        component:GoodList,
+    },
+    {
+        path:'/order',
+        component:Order,
     }
-]
 
+]
 
 export default routes
