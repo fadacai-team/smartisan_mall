@@ -1,25 +1,31 @@
-import Home from '../components/Home/Home'
-import Category from '../components/Category/Category'
-import Cart from '../components/Cart/Cart'
-import My from '../components/My/My'
+
 import Regist from '../components/My/regist/Regist'
+import Order from "../components/My/order/Order"
+import Details  from '../components/My/login/Details'
+// import Evaluate  from '../components/My/order/Evaluate'
+import Location from "../components/My/location/Location"
+import Address from "../components/My/location/Address"
 const routes = [
-    {
-        path:'/home',
-        component:Home,
-     
-    },{
-        path:'/category',
-        component:Category,
-       
-    },{
-        path:'/cart',
-        component:Cart,
-        
-    },
+  
     {
         path:'/my/regist',
         component:Regist,
+    },
+    {
+        path:'/my/order',
+        component:Order,
+    },
+    {
+        path: '/my/details',
+        component:Details
+    },
+    {
+        path: '/my/location',
+        component:Location
+    },
+    {
+        path: '/my/Address',
+        component:Address
     },
 ]
 

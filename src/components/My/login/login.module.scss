@@ -8,10 +8,16 @@
       margin-bottom: .65rem;
       margin-top: .25rem;
     .loginTop {
-        padding: 14px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      height: 4.15rem;
+      border-radius: .4rem .4rem 0 0;
+      font-size: .85rem;
+      color: #333;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: 1px solid #f6f6f6;
     .loginLeft{
         display: flex;
         align-items: center;
@@ -25,8 +31,9 @@
       
           .loginText {
           padding-left: .9rem;
-            font-size: 18px;
             font-weight: 700;
+            font-size: .85rem;
+            color: rgba(0,0,0,.8);
           }
     }
   
@@ -36,7 +43,34 @@
     }
   
     .menu {
-     
+      border-top: 1px solid #f4f4f4;
+      display: flex;
+      justify-content: center;
+      .menuItem{
+        text-align: center;
+        flex: 1;
+        border-right: 1px solid #f4f4f4;
+        padding: .45rem 0;
+        font-size: .5rem;
+        dt{
+         img{
+          width: 1.2rem;
+          height: 1.2rem;
+          display: block;
+          margin: 0 auto;
+         }
+        }
+        dd{
+          color: rgba(0,0,0,.4);
+          font-weight: 700;
+          line-height: .65rem;
+          margin-top: .2rem;
+          display: block;
+        }
+      }
+      .borderNone{
+        border-right: none;
+      }
     }
   }
   .not-square-grid .am-grid-icon {

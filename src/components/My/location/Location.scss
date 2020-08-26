@@ -1,0 +1,93 @@
+.details {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+    .content {
+        .address {
+            display: flex;
+            justify-content: space-between;
+            background-color: red;
+            justify-items: center;
+            padding: 0 1.5rem .5rem;
+            border-bottom: 1px solid rgba(0,0,0,.08);
+            background: #fff;
+            position: relative;
+            .addressInfo {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+              .infoTop {
+                display: flex;
+                padding: .5rem 4rem .2rem 0;
+                font-size: .8rem;
+                color: rgba(0,0,0,.8);
+                font-weight: 400;
+                .name {
+                    
+                                }
+          
+                .number {
+                    padding-left: 5px;
+                }
+                .iconWrite{
+                   margin-left: 10px;
+                    height: 18px;
+                    line-height: 15px;
+                    font-style: normal;
+                    display: inline-block;
+                    padding: .1rem .3rem;
+                    background: #e5efff;
+                    border-radius: 3px;
+                    border: 1px solid #bcc2ce;
+                    color: #3965cc;
+                    font-size: .4rem;
+                    font-weight: 700;
+                    display: block;
+                }
+              }
+          
+              .addressDetails {
+                font-size: .6rem;
+                color: rgba(0,0,0,.4);
+                margin-top: 5px;
+              }
+            }
+            
+                .changeAddress {
+                    display: inline-block;
+                    position: absolute;
+                    width: .6rem;
+                    height: .6rem;
+                    right: .7rem;
+                   top:50%;
+                transform: translateY(-50%);
+
+              
+                    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPaSURBVHgBxZi7btRAFIaP7V0IApRECBGqbJdICJGQBkRFAyVZElHBG/EC0NLRQCghLxCJO6KgSZYKaHIRt83ehv+3z/FOjDdavOtwpF8znvHO+Txz5oy9kRydTUBXoTnoBNSBmtmbAjkCq1arS91u906v12uGYYiiV0HzMWgdeiFHDLQErUItaAJAnJUqtA9FgPuF8gG0w5sjKdeWALDqnCPMNnQf9XVoC5qHQrRxtriM76BOmUCEWUHZgmPCPJR+zHA2XqH/AvoYT4wvwm2WBcRlWoGzXei0JAF8PYqis7j+omAd1N/rvQ6ahTbKALpMGDw9Ybqot6EA1/uIlxnUF6BN6IeCsm8O9/K326GM12IYaBfOu3DETcP4afEa5U9J4vaeJMtEe6m7jv3T4wQizG3CcHDACPe3deLaacnl4pa/pl2MId5HluZYgJBnfBgugwOLI5SCOGWL6wrF3zAN3JVkFpkKPo6chwiDpFeHwz1Jpp1Oc8fVWROvv4W2M7pkT6DXowLxKesMYJQ9bxYCLc3Saw+KscTlOm4w1ljIdJnqurW73CV0FgSB6I7JNa+P4XISemowRl7EYhhoh2cTGxgzqacwDs1A22x2zBfrnIipLExRoBRGkpjJNYUShU3bUI9QTqH8C6YIEGGWpb+bmNS4g/ynT+sG5e1+Bm/uzJgNHUOImUUUdcTIjmbgxKvGBJ37cUSpBdoeoW0K9bVBMEY8jC222+1lDMpDkjCpN2/XpJa5JjFfgmxm3hzmaJgZimcGjhkzyb52Lg5UH8Zmx48XmxmU08PADANEmDhmuEy2DHnO2cdrA9Fli3Rm1oaBoR22ZIsYfBkDcmY6GYDAjgYNaKcwfrtt7aFh4rEHwUApTLbTzzniZWSvvRAMLRgAc4vHARy0M/e6zO/ykiErjJln/woTj5O5nsfANxnAPow6c16yc+KdTf54THpSYGbygDgQT+3f0l8mZ68P0o+TAyAWyIwZBjDEmXkrBc0P6gUFnNRjm+8szd7BpBJnYs3O/jh2HIwEkwWqKdBzqAFdgS5CfM9JA9sC11uqCtoYM2ujwsTjppUwrGm1AX2VJJE9kuTdl+AuI8JVvDwzMowPVMPAzDVthREP7jE0mTAfOMHtoBx5mXKBNDAbOfew7QN0wnsjLAXGB5pVR1sD7qNTvoRz17GcLgOGZkE9o0+/l+nn+y4/7vjtHX+H476JsmAMqCZJ5uVOuiH9z9rz0DnRmdF+g/kkJVlFndLZdywHc1Dd+w+HZoH+GdqQnD+Zxg1kX5Kn9BwijAE0oG9SMoRvdkhekmQ5DOS/2R8U1A87/NoOlgAAAABJRU5ErkJggg==);
+                    background-size: 100%;
+                }
+              
+           
+          }
+      .addAddress {
+        background-color: #5985eb;
+        border: .0335rem solid #3a6be6;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+        height: 2.4rem;
+        line-height: 2.4rem;
+        padding: 0 1.25rem;
+        border-radius: .4rem;
+        font-size: .8rem;
+        font-weight: 700;
+        margin-top: 20px;
+        
+      }
+    }
+  }
+  .iconWrite{
+      
+  }
