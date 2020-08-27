@@ -9,6 +9,8 @@ import Saled  from '../components/My/saled/Saled'
 import Ticket  from '../components/My/ticket/Ticket'
 import Location from "../components/My/location/Location"
 import Address from "../components/My/location/Address"
+import GoodList from '../components/GoodList/GoodList'
+import Order from '../components/Cart/Order'
 const routes = [
   
     {
@@ -61,8 +63,16 @@ const routes = [
     {
         path:'/my/regist',
         component:Regist,
+    },
+    {
+        path:'/goodlist',
+        component:GoodList,
+    },
+    {
+        path:'/order',
+        component:Order,
     }
-]
 
+]
 
 export default routes
