@@ -1,8 +1,12 @@
-
+import List from '../components/list/List'
+import SearchBar from '../components/SearchBar/SearchBar'
+import Detail from '../components/Datail'
 import Regist from '../components/My/regist/Regist'
 import Order from "../components/My/order/Order"
 import Details  from '../components/My/login/Details'
-// import Evaluate  from '../components/My/order/Evaluate'
+import Evaluate  from '../components/My/evaluate/Evaluate'
+import Saled  from '../components/My/saled/Saled'
+import Ticket  from '../components/My/ticket/Ticket'
 import Location from "../components/My/location/Location"
 import Address from "../components/My/location/Address"
 const routes = [
@@ -27,6 +31,37 @@ const routes = [
         path: '/my/Address',
         component:Address
     },
+    {
+        path: '/my/evaluate',
+        component:Evaluate
+    },
+    {
+        path: '/my/saled',
+        component:Saled
+    },
+    {
+        path: '/my/ticket',
+        component:Ticket
+    },
+    {
+        path:'/list',
+        component:List,
+        children:[]
+    },
+    {
+        path:'/search',
+        component:SearchBar,
+        children:[]
+    },
+    {
+        path:'/detail',
+        component:Detail,
+        children:[]
+    },
+    {
+        path:'/my/regist',
+        component:Regist,
+    }
 ]
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Title from "../order/Title"
 import {withRouter} from "react-router-dom"
-import "./Location.scss"
+import styles from "./Location.module.scss"
  class Location extends Component {
     constructor(props){
         super(props)
@@ -11,56 +11,56 @@ import "./Location.scss"
     }
     render() {
         return (
-            <div className="details">
+            <div className={styles.details}>
                 <Title title={"地址列表"}></Title>
-                <div className="content">
-                    <div className="address">
-                        <div className="addressInfo">
-                            <div className="infoTop">
-                                <div className="name">
+                <div className={styles.content}>
+                    <div className={styles.address}>
+                        <div className={styles.addressInfo}>
+                            <div className={styles.infoTop}>
+                                <div className={styles.name}>
                                     木子李
                                 </div>
-                                <div className="number">
+                                <div className={styles.number}>
                                     15797841029
                                 </div>
-                                <em className="iconWrite">
+                                <em className={styles.iconWrite}>
                                     默认地址
                                 </em>
                             </div>
-                            <div className="addressDetails">
+                            <div className={styles.addressDetails}>
                                 北京市直辖区长安路389号
                             </div>
                         </div>
                        
-                            <i className="changeAddress">
+                            <i className={styles.changeAddress}>
                            
                             </i>
        
                     </div>
-                    <div className="address">
-                        <div className="addressInfo">
-                            <div className="infoTop">
-                                <div className="name">
+                    <div className={styles.address}>
+                        <div className={styles.addressInfo}>
+                            <div className={styles.infoTop}>
+                                <div className={styles.name}>
                                     木子李
                                 </div>
-                                <div className="number">
+                                <div className={styles.number}>
                                     15797841029
                                 </div>
                                
                             </div>
-                            <div className="addressDetails">
+                            <div className={styles.addressDetails}>
                                 北京市直辖区长安路389号
                             </div>
                         </div>
                        
-                            <i class="changeAddress">
+                            <i class={styles.changeAddress}>
                            
                             </i>
        
                     </div>
 
                     
-                    <div className="addAddress" onClick={this.HandleAddAddress.bind(this)}>
+                    <div className={styles.addAddress} onClick={this.HandleAddAddress.bind(this)}>
                         添加地址
                     </div>
                 </div>

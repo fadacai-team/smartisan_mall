@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Title from "../order/Title"
 import UserInfo from "../login/userInfo"
+
 // import "./Details.scss"
 import styles from "./Details.module.scss"
 export default class  extends Component {

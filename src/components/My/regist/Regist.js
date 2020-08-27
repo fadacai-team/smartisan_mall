@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from "./Regist.module.scss"
 import {Button,Checkbox} from "antd-mobile"
 import axios from "../../../Utils/myaxios"
+import {onLogin} from "../cookie/Cookie"
 
 const CheckboxItem = Checkbox.CheckboxItem;
 export default class Regist extends Component {
@@ -62,7 +63,10 @@ export default class Regist extends Component {
             axios.post("http://119.29.81.194/data/select.php",params)
             .then(res=>{//如果返回为真，跳转至个人中心
                 console.log(res);
+
                if(JSON.parse(res.code)){
+                  
+                onLogin(res.token,this.state.num)
                 this.props.history.push("/my")
                 
                }else{

@@ -17,10 +17,10 @@ export default class allOrder extends Component {
                         坚果 Pro 3 足迹保护套 莫里斯·詹姆士·麦当劳出生（莫里斯·詹姆士·麦当劳出生）
                         </div>
                         <div className={styles.shopPrice}>
-                            <span>￥49</span> X {1}
+                            <span>￥49</span> x {1}
                         </div>
                     </dd>
-                    <div>{">"}</div>
+                    <div className={styles.rightIcon}></div>
                 </div>
                 <div className={styles.orderPay}>
                     <dt>

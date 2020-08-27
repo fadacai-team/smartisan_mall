@@ -6,8 +6,10 @@ import {withRouter} from "react-router-dom"
         super(props);
     }
    handleClick(path){
+ 
     this.props.history.push(path)
-    console.log(path);
+   
+   
    }
     render() {
         return (
@@ -18,7 +20,7 @@ import {withRouter} from "react-router-dom"
                             <div className={styles.listItem} key={item.text} onClick={this.handleClick.bind(this,item.path)}>
                                 <div className={styles.info}>
                         <div className={styles.listItemLeft}>{item.text}</div>
-                                    <div className={styles.listItemRight} >{">"}</div>
+                                    <div className={styles.listItemRight}></div>
                                 </div>
                             </div> 
                         )

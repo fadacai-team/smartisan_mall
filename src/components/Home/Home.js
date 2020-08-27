@@ -13,7 +13,7 @@ class Home extends Component {
         imgHeight: 176,
         quickWarp:[],
         always:[],
-        title1:[],
+        title1:{},
         title2:[],
         Time:0,
         type:false,
@@ -33,7 +33,7 @@ class Home extends Component {
     }
     componentDidMount(){
         axios.get('/mobile/new/home?channel_id=1002').then((data)=>{
-            console.log(data.data[3].content[1].floor[1])
+            console.log(data.data[3].content[0].floor[0])
             this.setState({swiper_list:data.data[0].content})
             this.setState({quickWarp:data.data[1].content})
             this.setState({always:data.data[2].content[0]})
@@ -44,7 +44,7 @@ class Home extends Component {
             console.log(this.state.title1)
             setInterval(()=>{
                 if(this.state.title1.activityInfo){
-                    this.state.title1.activityInfo.surplusTime --
+                    (this.state.title1.activityInfo.surplusTime --)
                     this.setState({Time:this.state.title1.activityInfo.surplusTime})
                 }
             },1000)
@@ -147,11 +147,11 @@ class Home extends Component {
                                                 <h3>{this.state.title1.titleConfig? this.state.title1.titleConfig.title :""}</h3>
                                                 <span className={styles.tag + " " + styles.cutdown}>
                                                     <span className={styles.space}>{this.state.title1.activityInfo? this.state.title1.activityInfo.homeDescribe :""}</span>
-                                                    <sapn>
+                                                    <span>
                                                         <div className={styles.time_box}>
                                                             {this.getTime()}
                                                         </div>
-                                                    </sapn>
+                                                    </span>
                                                 </span>
                                             </div>
                                             <p className={styles.sub_title}>{this.state.title1.titleConfig? this.state.title1.titleConfig.subTitle :""}</p>

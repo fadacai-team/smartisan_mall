@@ -3,6 +3,7 @@ import axios from "axios"
 import Login from "./login/login"
 import styles from"./My.module.scss"
 import List from "./login/List"
+
 export default class My extends Component {
     constructor(props){
         super(props);
@@ -26,9 +27,12 @@ export default class My extends Component {
                     {text:"资质证照",path:""},
                 ]
                 
-            ]
+            ],
+         
+            
         }
     }
+   
     handleclick =()=>{
      
      

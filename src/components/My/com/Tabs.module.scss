@@ -1,0 +1,36 @@
+.tabs {
+    z-index: 500;
+    background-color: white;
+    .tabsWrap {
+        display: flex;
+        border: 1px solid #dddddd;
+        justify-content: center;
+        align-items: center;
+        border-radius: .4rem;
+        box-shadow: 0 5.33px 13.33px rgba(0,0,0,.08);
+   
+
+      .tabsItem {
+         height: 1.7rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+          text-align: center;
+          flex: 1;
+         background-color:  #fefefe;
+         font-size: .675rem;
+        font-weight: 700;
+        border-right: 1px solid #dddddd;
+        &:hover{
+            background-color: #b1b1b1;
+            color: white;
+        }
+        span {
+            margin-right: 5px;
+        }
+      }
+      .borderNone{
+          border-right: none;
+      }
+    }
+  }
