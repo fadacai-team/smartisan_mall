@@ -16,9 +16,32 @@ function CartItem(props) {
         }
         return attrs
     }
-    let render_item = props.item.toJS()
+    var getGifts = ()=>{
+        var gifts = []
+        var list = render_item.gifts
+
+        for(var i=0;i<list.length;i++){
+            if(list[i].description){
+                gifts.push(
+                    <div key={i} className={style.promotion_title +" "+ style.item}> 
+                        <div className={style.promotion_type}> 
+                            <h4>{list[i].type==1?'赠':""}</h4> 
+                        </div> 
+                        <p> {list[i].description}</p> 
+                    </div>
+                )
+            }
+        }
+        return gifts
+    }
+    let render_item= props.item.toJS()
     return (
         <div className={style.group_sub}>
+
+            {
+                props.noTag?"": getGifts()
+            }
+
             <div className={style.cart_item}>
             {
                 props.noCheck?'':(
@@ -44,7 +67,7 @@ function CartItem(props) {
                     {
                         props.noTag?'':(
                             <div  className={style.colorful_tag_container}>  
-                                <span className="colorful-tag red"> 赠品无货 </span> 
+                                <span className="colorful-tag red"> </span> 
                             </div>
                         )
                     }

@@ -96,6 +96,7 @@ export default function(state = cartState, action){
         //获取优惠信息
         case SET_PROMOTIONS:
             var promotions = state.set('promotions',fromJS(action.promotions))
+            console.log('promotions seted')
             return promotions
         //更新购物车选择
         case UPDATE_ISCHOOSED:
