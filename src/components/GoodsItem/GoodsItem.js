@@ -8,7 +8,7 @@ const trans = (r, s) => `perspective(1500px) rotateX(00deg) rotateY(${0}deg) rot
 
 export default function GoodsItem(props){
     
-        const myanimation = useSpring({to:{opacity: 1,scale:1,transform:'translateY(0)'} , from: {scale:0,opacity: 0,transform:'translateY(50px)',delay:props.index * 200}})
+        const myanimation = useSpring({to:{opacity: 1} , from: {opacity: 0}})
         const getPrice = ()=>{
             if(props.data.promotionList[0]){
                 if(props.data.promotionList[0].tag){
