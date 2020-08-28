@@ -1,7 +1,7 @@
 import React, { useRef ,useEffect,useState} from 'react'
 import {connect} from 'react-redux'
 import axios from './.././../Utils/myaxios'
-import {detailAction,activeAction} from './.././../store/actionCreate/detailAction'
+import {detailAction,activeAction,clearAction} from './.././../store/actionCreate/detailAction'
 import detailStyle from './Detail.module.scss'
 import {withRouter} from 'react-router-dom'
 import ProductBanner from './ProductBanner'
@@ -36,10 +36,16 @@ function Datail (props){
     useEffect(() => {
         props.setAllData(props.match.params.id)
         showShopMount()
-        mask.current.onmousewheel=function() {return false}
-        mask.current.style.touchAction = 'none'
+        if(mask.current){
+            mask.current.onmousewheel=function() {return false}
+            mask.current.style.touchAction = 'none'
+        }
+        return () => {
+            props.clearDataAll()
+        }
+        
     },[])
-    var domData = props.detailData.toJS()[0]
+    var domData =  (props.detailData && props.detailData.size ) ? props.detailData.toJS()[0] :{}
     var navArr = props.navData.toJS()
 
     let scrollToItem = (index) => {
@@ -81,7 +87,10 @@ function Datail (props){
 
 
     return (
-        <div className={detailStyle.detail}   >
+        <React.Fragment>
+            {
+            (props.detailData && props.detailData.size)?(
+                <div className={detailStyle.detail}   >
             <div className={detailStyle.detailHeader}>
                 <div className={detailStyle.detailTitle}>
                     <h2 className={detailStyle.productName}>{domData?domData.name:''}</h2>
@@ -112,7 +121,7 @@ function Datail (props){
                     <ProductBanner bannerData = {props.detailData.getIn([props.index,'shop_info','ali_images'])}></ProductBanner>
                     <ProductInfo activeProps={props.activeHandleClick} productInfo={domData?domData:''}></ProductInfo>
                 </div>
-                <Preview></Preview>
+                <Preview idsPreview={props.match.params.id}></Preview>
                 <ProDetail></ProDetail>
                 
                 <div></div>
@@ -177,6 +186,10 @@ function Datail (props){
                 <ToCart></ToCart>
             </div>
         </div>
+            ):""
+        }
+        </React.Fragment>
+        
     )
 
 }
@@ -222,6 +235,9 @@ const mapDispatchToProps = (dispatch) => {
         activeHandleClick:(isShow,optionType,buttonType) => {
             dispatch(activeAction(isShow,optionType,buttonType))
         },
+        clearDataAll:() => {
+            dispatch(clearAction())
+        }
         
         
     }

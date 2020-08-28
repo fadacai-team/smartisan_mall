@@ -1,5 +1,5 @@
 import {fromJS} from 'immutable'
-import {SET_ALL_DATA,SET_PREVIEW_DATA,SET_URL_PRO,SET_ACTIVE,SET_PRO_NUM,SET_TYPE_ARR,SET_INDEX} from './../actionsType/detailType'
+import {SET_ALL_DATA,SET_PREVIEW_DATA,SET_URL_PRO,SET_ACTIVE,SET_PRO_NUM,SET_TYPE_ARR,SET_INDEX,CLEAR_DATA} from './../actionsType/detailType'
 
 const defaultState = fromJS({
     data:[],
@@ -64,6 +64,8 @@ export default function (state = defaultState,action){
         case SET_INDEX:
             let arrType = []
             return state.set('index',action.chooseIndex)    
+        case CLEAR_DATA:
+            return state.set('data',{})
         default:
             break
     }

@@ -1,4 +1,4 @@
-import {SET_ALL_DATA,SET_PREVIEW_DATA,SET_ACTIVE,SET_PRO_NUM,SET_TYPE_ARR,SET_INDEX} from './../actionsType/detailType'
+import {SET_ALL_DATA,SET_PREVIEW_DATA,SET_ACTIVE,SET_PRO_NUM,SET_TYPE_ARR,SET_INDEX,CLEAR_DATA} from './../actionsType/detailType'
 
 const detailAction = (detailParams) => ({
     type:SET_ALL_DATA,
@@ -49,6 +49,11 @@ const setIndexAction = (chooseIndex) =>( {
     chooseIndex
 })
 
+const clearAction = () => ({
+    type:CLEAR_DATA
+})
+
+
 export {
     detailAction,
     previewAction,
@@ -56,5 +61,6 @@ export {
     activeAction,
     setNumAction,
     setTypeAction,
-    setIndexAction
+    setIndexAction,
+    clearAction
 }

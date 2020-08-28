@@ -5,6 +5,7 @@ const SET_ACTIVE = 'SET_ACTIVE'
 const SET_PRO_NUM = 'SET_PRO_NUM'
 const SET_TYPE_ARR = 'SET_TYPE_ARR'
 const SET_INDEX = 'SET_INDEX'
+const CLEAR_DATA = 'CLEAR_DATA'
 export {
     // GET_DATA_DETAIL,
     // GET_DATA_BANNER,
@@ -14,5 +15,6 @@ export {
     SET_ACTIVE,
     SET_PRO_NUM,
     SET_TYPE_ARR,
-    SET_INDEX
+    SET_INDEX,
+    CLEAR_DATA
 }
