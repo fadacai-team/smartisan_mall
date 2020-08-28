@@ -38,6 +38,9 @@ class List extends Component {
                         )
                     })
                 }
+                {
+                    this.props.loading?<div className={styles.loading} style={{fontSize:'2rem',textAlign:'center',height:'8rem',lineHeight:'8rem'}}></div>:""
+                }
             </React.Fragment>
         )
     }

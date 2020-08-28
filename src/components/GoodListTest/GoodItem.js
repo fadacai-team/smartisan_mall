@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './GoodItem.module.scss'
+import style from './GoodItem.module.scss' 
 export default function GoodItem() {
     return (
         <section class={style.spu_item_normal_box} index="4">

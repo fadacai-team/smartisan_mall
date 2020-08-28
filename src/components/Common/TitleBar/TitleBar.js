@@ -11,7 +11,7 @@ function TitleBar(props) {
                 }
             } className={style.nav_back}>返回</div>
             {
-                props.option=="edit"?<div className={style.nav_edit} onClick={props.edit}>{props.isedit?'完成':'编辑'}</div>:""
+                props.option==="edit"?<div className={style.nav_edit} onClick={props.edit}>{props.isedit?'完成':'编辑'}</div>:""
             }
 
             <h1 className={style.nav_title}> {props.title} </h1> 

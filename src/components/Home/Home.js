@@ -4,8 +4,6 @@ import { Carousel } from "antd-mobile";
 import {withRouter} from 'react-router-dom'
 import axios from '../../Utils/myaxios'
 import { connect } from 'react-redux'
-// import axios from '../../Utils/myaxios'
-// import { connect } from 'react-redux'
 import {GoodsROWData} from '../../store/actionCreate/goodswarp'
 import ImgWarp from '../imgWarp/ImgWarp'
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
@@ -14,10 +12,7 @@ import {goodsWater} from '../../store/actionCreate/goodswarp'
 import GoodsRow from '../GoodsRow/GoodsRow'
 import List from "../list/List"
 class Home extends Component {
-    // constructor(props){
-    //     super(props)
-    //     console.log(props)
-    // }
+
     state = {
         swiper_list:[],
         imgHeight: 176,
@@ -47,7 +42,6 @@ class Home extends Component {
             this.setState({type:false})
         }
 
-        console.log(e.target.scrollHeight - e.target.scrollTop)
         if(e.target.scrollHeight - e.target.scrollTop<1000 && this.state.loading==false){
             this.setState({loading:true})
             this.setState({page:this.state.page+1},()=>{
@@ -67,7 +61,6 @@ class Home extends Component {
 
         })
         this.props.goodsData().then(()=>{
-            console.log(this.props.Digital)
         })
         axios.get('/mobile/new/home?channel_id=1002').then((data)=>{
             // console.log(data.data)
@@ -82,7 +75,6 @@ class Home extends Component {
             this.setState({full_img:data.data[7].content})
             // this.setState({goodswarp1:data.data[4]})
             // this.setState({goodswarp2:data.data[5]})
-            console.log(this.state.title1)
             setInterval(()=>{
                 if(this.state.title1.activityInfo){
                     (this.state.title1.activityInfo.surplusTime --)
@@ -149,6 +141,7 @@ class Home extends Component {
                             display: "inline-block",
                             width: "100%",
                             height: this.state.imgHeight,
+                            touchAction:'pan-y'
                             }}
                             >
                             <img
@@ -334,8 +327,6 @@ class Home extends Component {
                                                                 ¥{parseFloat(v.originalPrice)}
                                                             </span>
                                                         </p>
-                                                       
-                                                        
                                                     </div>
                                                 )
                                             }) :''}
@@ -361,9 +352,9 @@ class Home extends Component {
                                                         <figure>
                                                             <img src={v.skuInfo[0].images}></img>
                                                         </figure>
-                                                        <p className={styles.goods_price} style={{textAlign:'center',width:"71px"}}>
+                                                        <div className={styles.goods_price} style={{textAlign:'center',width:"71px"}}>
                                                             {v.skuInfo[0].discountPrice == v.skuInfo[0].originalPrice ? <span>¥{parseFloat(v.skuInfo[0].discountPrice)}</span> : <p><span className={styles.discont}>¥{parseFloat(v.skuInfo[0].discountPrice)}</span><span className={styles.orignal}>¥{parseFloat(v.skuInfo[0].originalPrice)}</span></p>}
-                                                        </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -402,7 +393,7 @@ class Home extends Component {
                                     return (
                                         // https://resource.smartisan.com/resource/f895257e7fc46efd688ed0e860109898.png?x-oss-process=image/resize,w_375/format,webp
                                         <div key={i}>
-                                       
+
                                             <img src={v.src + "?x-oss-process=image/resize,w_375"}></img>
                                         </div>
                                     )
@@ -412,7 +403,7 @@ class Home extends Component {
                         <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>
                         {/* 首页商品列表开始 */}
-                            <List page={this.state.page} goodsItem={this.props.goodsItem} goodsWater1={this.props.goodsWater1}></List>
+                            <List loading={this.state.loading} page={this.state.page} goodsItem={this.props.goodsItem} goodsWater1={this.props.goodsWater1}></List>
                         {/* 首页商品列表结束 */}
                     </div>
                     {/* 首页内容结束 */}

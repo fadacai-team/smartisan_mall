@@ -15,7 +15,7 @@ import {
 import axios from '../../Utils/myaxios'
 import TitleBar from '../Common/TitleBar/TitleBar'
 import BottomBar from './CartBottomBar/CartBottomBar'
-import { List ,Map,toJS, fromJS} from 'immutable'
+import { Map, fromJS} from 'immutable'
 
 const Cart = (props) => {
     let [totalPrice,setTotalPrice] = useState(0)
@@ -53,7 +53,6 @@ const Cart = (props) => {
                 ids =  cart.get('cart_items').map(v=>{
                     return  v.get('id')
                 }).join(',')
-                console.log('ids',ids)
                 props.setRenderData(ids).then(res=>{
                 }).catch(err=>{
                     console.log(err)
@@ -66,7 +65,7 @@ const Cart = (props) => {
         })
         // var arr = List.union(List(cart.cart_items),List(cart_list))
         
-    },[])
+    },[1])
     //数量或价格改变时 生成新的cart cart_items
     useEffect(()=>{
         if(props.render_list.length){
@@ -102,13 +101,13 @@ const Cart = (props) => {
         var checkall = true
         if (isEditor) {
             props.render_list.forEach(v=>{
-                if(v.get('del')==false){
+                if(v.get('del')===false){
                     checkall =false
                 }
             })
         }else{
             props.render_list.forEach(v=>{
-                if(v.get('checked')==false){
+                if(v.get('checked')===false){
                     checkall =false
                 }
             })

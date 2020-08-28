@@ -22,7 +22,7 @@ function CartBottomBar(props) {
                         } className={style.checkbox+" " + (props.ischeckall?style.checkbox_on:'')}> </span> 
                     </div> 
                 </div> 
-                <span >已选 <i >{props.count-0}</i> 件</span> 
+                <span >已选 <i >{parseInt(props.count)}</i> 件</span> 
             </div> 
             <div  className={style.sum_info}>
                 <div  className={style.desc}> 
@@ -39,13 +39,13 @@ function CartBottomBar(props) {
                             if(props.count!=0){
                                 props.del()
                             }
-                        }}  className={style.blue_btn+" "+style.edit_red +" " + (props.count==0?style.disable:"" ) }>删除所选</div>
+                        }}  className={style.blue_btn+" "+style.edit_red +" " + (props.count===0?style.disable:"" ) }>删除所选</div>
                     ):(
                         <div onClick={()=>{
                             if(props.count!=0){
                                 props.history.push('/order')
                             }
-                        }}  className={style.blue_btn +" "+ (props.count==0?style.disable:"" )}>现在结算</div>
+                        }}  className={style.blue_btn +" "+ (props.count===0?style.disable:"" )}>现在结算</div>
                     )
                 }
             </div>

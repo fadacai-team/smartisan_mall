@@ -15,7 +15,7 @@ class GoodsWarp extends Component {
     render() {
         return (
             <React.Fragment>
-           {
+            {
             this.props.goods_rows.map((v,i)=>{
                 return (
                     <div key={i} className={styles.goods_row_warp} key={i} style={{marginBottom:"15px"}}>
@@ -29,7 +29,7 @@ class GoodsWarp extends Component {
                             {v.skuInfo.map((l,d)=>{
                                 // console.log(l.promotionList)
                                 return (
-                                    <section className={styles.flex_item +' ' + styles.sku_item_block_box + " " + styles.floor}>
+                                    <section key={d} className={styles.flex_item +' ' + styles.sku_item_block_box + " " + styles.floor}>
                                         <figure className={styles.item_cover}>
                                             {l.promotionList ? <aside className={styles.item_title + " " + styles.sign}>
                                                 <span className={styles.green}>
