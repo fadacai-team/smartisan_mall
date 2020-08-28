@@ -6,7 +6,9 @@ export default class GoodsItem extends Component {
         // console.log(props)
     }
     // getPrice(){
-    //     if()
+    //     if(this.props.data.promotionList[0]){
+
+    //     }else if()
     // }
     render() {
         return (
