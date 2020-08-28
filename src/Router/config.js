@@ -57,7 +57,7 @@ const routes = [
     },
 
     {
-        path:'/preview',
+        path:'/preview/:id',
         component:PreviewAll
     },
     {

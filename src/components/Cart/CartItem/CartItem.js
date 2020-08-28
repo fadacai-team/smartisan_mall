@@ -48,11 +48,7 @@ function CartItem(props) {
     }
     let render_item= props.item.toJS()
     return (
-        <div className={style.group_sub} onClick={
-            ()=>{
-                props.history.push('/detail/'+render_item.spu_id)
-            }
-        }>
+        <div className={style.group_sub} >
             {
                 props.noTag?"": getGifts()
             }
@@ -72,7 +68,9 @@ function CartItem(props) {
             }
             <div className={style.cart_item_wraper} style={props.noCheck?{paddingLeft:'.6rem'}:{}}>
                 <div className={style.item_thumb} onClick={()=>{
-                    // props.history.push('/')
+                    // props.history.push('/')onClick={
+                    props.history.push('/detail/'+render_item.spu_id)
+        
                 }}>
                     <img alt={render_item.name} className="item-thumb-img" height="90" width="90" 
                     src={render_item.imageurl+"?x-oss-process=image/resize,w_180/format,webp"}/>

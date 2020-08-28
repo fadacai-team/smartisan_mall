@@ -8,19 +8,19 @@ import {Map,toJS, fromJS} from 'immutable'
 
 function ToCart(props) {
     let [mount,setMount] = useState(0)
-    let [str,setStr] = useState('')
+    let [str,setStr] = useState('黑色')
     
     useEffect(() => {
-        let newstr = ''
-        console.log(props.productType)
-        props.productType.forEach((item,index) => {
-            if(index<props.productType.length-1){
-                newstr += item + '.'
-            }else{
-                newstr += item
-            }
-        })
-        setStr(newstr)
+        // let newstr = ''
+        // console.log(props.productType)
+        // props.productType.forEach((item,index) => {
+        //     if(index<props.productType.length-1){
+        //         newstr += item + '.'
+        //     }else{
+        //         newstr += item
+        //     }
+        // })
+        // setStr(newstr)
     },[])
     return (
         <React.Fragment>

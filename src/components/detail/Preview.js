@@ -12,12 +12,7 @@ class Preview extends Component {
     render() {
         const data = this.props.previewData.toJS()
         return (
-            <div className={previewStyle.preview} onClick={
-                () => {
-                    this.props.history.push('/preview')
-                }
-                
-            }>
+            <a className={previewStyle.preview} href={'https://www.smartisan.com/comment/'+this.props.idsPreview}>
                 <div className={previewStyle.previewData}>
                     <div className={previewStyle.previewDataLeft}>
                         <h2 className={previewStyle.titleLeft}>用户评价（{this.props.previewData.get('total')}）</h2>
@@ -37,7 +32,7 @@ class Preview extends Component {
                     </div>
                     <div className={previewStyle.userContent}><p>{this.props.previewData.getIn(['list','0','content'])}</p></div>
                 </div>
-            </div>
+            </a>
         )
     }
 

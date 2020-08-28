@@ -42,6 +42,7 @@ function Datail (props){
         }
         return () => {
             props.clearDataAll()
+            props.activeHandleClick('show','add','button')
         }
         
     },[])
@@ -95,9 +96,8 @@ function Datail (props){
                 <div className={detailStyle.detailTitle}>
                     <h2 className={detailStyle.productName}>{domData?domData.name:''}</h2>
                     <div className={detailStyle.returnPreRouter} onClick={() => {
-                        props.history.goBack()
-                    }
-                    }>
+                            props.history.goBack()
+                        }}>
                         <span className={detailStyle.arrow}>{'<'}</span>
                         <span className={detailStyle.backText}>返回</span>
                     </div>
