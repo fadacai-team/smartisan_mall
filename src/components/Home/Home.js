@@ -10,7 +10,7 @@ import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import {goodsWater} from '../../store/actionCreate/goodswarp'
 
 import GoodsRow from '../GoodsRow/GoodsRow'
-import List from "../list/List"
+import List from "../List/List"
 class Home extends Component {
 
     state = {
@@ -387,7 +387,9 @@ class Home extends Component {
                             <GoodsRow data={this.props.Kitchenware}></GoodsRow>  */}
                             
                         {/* full-img开始 */}
-                            <section className={styles.full_cloumn}>
+                            <section className={styles.full_cloumn} onScroll={(e)=>{
+                                e.stopPropagation()
+                            }}>
                                 {/* {console.log(this.state)} */}
                                 {this.state.full_img != []? this.state.full_img.map((v,i)=>{
                                     return (
