@@ -1,0 +1,63 @@
+.waterfall_warp{
+    display: block;
+    .module_title_warp{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+        padding: 0 1.2rem;
+        cursor: pointer;
+        height: 1.8rem;
+        .link{
+            min-width: 1.1rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            z-index: 1;
+            right: 1.2rem;
+            padding-right: .6rem;
+            color: rgba(0,0,0,.4);
+            font-weight: 700;
+            font-size: .7rem;
+        }
+    }
+    .arrow_right_icon::after{
+        content: "";
+        display: inline-block;
+        width: 1.1rem;
+        height: 1.1rem;
+        right: .9rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgB7ZjNihNBFIVPJ43ZRchgUMeFC2cm8wpxp+J23PmY/j6KO0ccMQiCbvxjBpK051SqoAzOYiB9q2DuBzdVnV4k9XHvreoGHMdxHMdxHMdxHMdxbBnCngeMJeMCFWEt4uFgMHjaNM1B13XvUZEMSxFzBQWAMeL8gFGNDCsR8xhgRoAZkWSoTE5RgYwBjJAA0q3X6xCaM8bD4fA5xykKY5URn5kBY8qYKhtiRoQbnI84n3F6xviNQlj2iFMu+CZj2iULCCIULWPGrz/yqz8ogPWuoX4wRlYKsXkq9F9SZpjLKHGO+IAtGSwZJUnDcZiViamMEiJEknFLF1m/SJlxBGMZpUSIXIayIdigjKZEmZQUISRD54nbygZuq8j6aMqMTzCQUVqE0EIl4F687rJ7LTPlkPd6l1GDCLHQBxe9n2VEgNcth0P0nBm1iBCLuHNIRpPfiLtJrw20JhFiESXs60ieskOjZLCPHHF+hh5k1CZChDLJekY4Z7CRpt1EZfKOscIOMXvouiLaVsODWZSA/JrjDeyYFvXxBJszxP84p5QXHH9ixzSoC0k4xr9baHqHcbFarSThG3qgJhGPGcdadCyFQLzWi5veJIhaREjCLC5a/yllhObnjJfoUUL6odIECZfcUy/opSdsU3LX0DPGI2aBDkphN0gPXnE0kyBKZYQkPOOC9/J+IGJ5aPEqBxMJooSIEV/YnvBwtBf7wTbmEoR1aeQSUgmkklD8QAEJwjIjVA4njEm2OyA7Of5ivEIBCcJKRMqESVx0kwkQWvxrFJIgTEqjbds5T4WT8IPMhtokCJNnjeVy+X1r8Qkt/g0KSxBWj+Ff43uGO/Fa82okCMv3EV/ieBebxb9FJRJKcR+bHcRxHMdxHMdxHMdxHOda8xeb8StR+kZEHAAAAABJRU5ErkJggg==) no-repeat 50%;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .goods.scroll{
+        width: calc(100% - 1.2rem);
+        margin: 0 auto;
+    }
+    .commn_layout{
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .cloumn_flex_box{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}

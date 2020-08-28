@@ -31,15 +31,6 @@
             display: flex;
             align-items: center;
             height: 100%;
-            .checkbox_on{
-                position: relative;
-                display: inline-block;
-                width: 23px;
-                height: 23px;
-                background: url(http://static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
-                background-size: 100% auto;
-                background-position: 0 -80px;
-            }
             .checkbox{
                 position: relative;
                 display: inline-block;
@@ -48,6 +39,15 @@
                 background: url(http://static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
                 background-size: 100% auto;
                 background-position: 0 -80px;
+            }
+            .checkbox_on{
+                position: relative;
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+                background: url(http://static.smartisanos.cn/mobile/assets/images/checkbox@3x.1a1973d70f1b950c69558422677064d0.png) no-repeat;
+                background-size: 100% auto;
+                background-position: 0 0px;
             }
         }
     }
@@ -89,10 +89,15 @@
             text-shadow: 0 -1px 0 rgba(0,0,0,.15);
             color: #fff;
         }
+        .blue_btn.edit_red{
+            background: #d9554c;
+            background: linear-gradient(#db6962,#d0453d);
+        }
         .blue_btn.disable{
             background: #a9a9a9;
             background: linear-gradient(#bfbfbf,#999);
         }
+
     }
 }
 .bottom_bar::before,.bottom_bar::after{
