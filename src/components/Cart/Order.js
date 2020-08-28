@@ -9,26 +9,34 @@ import {
 } from '../../store/actionCreate/cart'
 
 import TitleBar from '../Common/TitleBar/TitleBar'
-import BottomBar from './CartBottomBar/CartBottomBar'
 
+function formatPrice(price) {  
+    price = price.toFixed(2) +""
+    return price
+}
 function Order(props) {
     let [totalPrice,setTotalPrice] = useState(0)
     let [goodsCount,setGoodsCount] = useState(props.render_list.size)
+    var [orders] = useState(props.render_list.filter(v=>{
+        return v.get('checked')
+    }))
     useEffect(()=>{
         var count = 0
         var totalprice = 0
         props.render_list.forEach(v=>{
             if(v.get('checked')){ 
-                count += v.get('count')
+                count += (v.get('count')-0)
                 totalprice += v.get('price') * v.get('count')
             }
         })
         setGoodsCount(count)
         setTotalPrice(totalprice)
     },[props.render_list])
+
+    
     return (
         <div>
-            <TitleBar></TitleBar>
+            <TitleBar title="订单信息"></TitleBar>
             <div className={style.main_wrapper}>
                 {/* 地址 */}
                 <div className={style.order_card}>
@@ -81,26 +89,28 @@ function Order(props) {
                         <h2 className={style.title}>商品信息</h2> 
                         <h3 className={style.sub_title}>总计 {goodsCount} 件商品</h3>
                     </div>
+                    <div className={style.cart_items}>
                     {
-                        props.render_list.map((v,i)=>{
+                        orders.map((v,i)=>{
                             return <CartItem noTag={true} noCheck={true} index={i} item={v} key={i} ></CartItem>
                         })
                     }
+                    </div>
                 </div>
                 {/* 商品金额 */}
-                <div className={style.order_card}>
+                <div className={style.order_card} style={{marginBottom:'4rem'}}>
                     <div className={style.card_header}>
                         <h2 className={style.title}>商品金额</h2> 
                     </div>
                     <ul className={style.subtotal_items}> 
                         <li className={style.item}> 
                             <span className={style.name}>商品总计</span> 
-                            <span className={style.price}><i>¥</i> <span>1,343.00</span></span> 
+                            <span className={style.price}><i>¥</i> <span>{formatPrice(totalPrice)}</span></span> 
                         </li> 
                         <li className={style.item}> 
                             <span className={style.name}>优惠</span>
                             <span className={style.price +" "+style.price_minus}><i>¥</i> 
-                            <span>125.00</span></span> 
+                            <span>0.00</span></span> 
                         </li> 
                         <li className={style.item}> 
                             <span className={style.name}>运费</span> 
@@ -109,7 +119,7 @@ function Order(props) {
                         <li className={style.item +" "+ style.items_subtotal}>
                             <span className={style.name}>应付金额</span> 
                             <span className={style.price}>
-                                <i>¥</i> <span>{totalPrice}</span>
+                                <i>¥</i> <span>{formatPrice(totalPrice)}</span>
                             </span> 
                         </li> 
                     </ul>
@@ -128,8 +138,6 @@ function Order(props) {
                         }}  className={style.blue_btn}>现在支付</div>
                 </div>
             </div>
-
-
 
 
         </div>

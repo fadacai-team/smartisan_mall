@@ -4,13 +4,14 @@ import styles from "./citySelect.module.scss"
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = { 
-      cities:["请选择"],   //选项
+      cities:this.props.localData,   //选项
       city:"请选择"   // 默认选项
      }
   }
   componentDidMount(){
-    
+    // console.log(this.state.localData);
   }
  
   render() { 

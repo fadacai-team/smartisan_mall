@@ -114,6 +114,12 @@
                 }
             }
         }
+        .has_margin_bottom{
+            margin-bottom: .6rem;
+        }
+        .has_margin_top{
+            margin-top: .6rem;
+        }
         .full_warp{
             height: 6rem;
             display: flex;
@@ -141,7 +147,7 @@
                         -ms-flex-direction: column;
                         flex-direction: column;
                         position: relative;
-                        padding: .6rem;
+                        padding: .5rem;
                         overflow: hidden;
                         -webkit-box-flex: 1;
                         -ms-flex: 1;
@@ -156,6 +162,34 @@
                             justify-content: space-between;
                             overflow: hidden;
                             padding-bottom: .2rem;
+                            h3{
+                                font-size: .7rem;
+                                font-weight: 700;
+                                line-height: 1rem;
+                                min-height: 1rem;
+                            }
+                            .tag1{
+                                padding: .1rem .3rem;
+                                height: .9rem;
+                                line-height: .7rem;
+                                font-weight: 700;
+                                border-radius: .2rem;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: inline-block;
+                                -webkit-box-sizing: border-box;
+                                box-sizing: border-box;
+                                transform-origin: center;
+                                span{
+                                    display: flex;
+                                    font-size: .5rem;
+                                    overflow: hidden;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    justify-content: center;
+                                }
+                            }
                             .main_title{
                                 display: -webkit-box;
                                 display: -ms-flexbox;
@@ -244,6 +278,61 @@
                             -webkit-box-direction: normal;
                             -ms-flex-direction: column;
                             flex-direction: column;
+                            .goods_item1{
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                figure{
+                                    width: 3.6rem;
+                                    height: 3.6rem;
+                                    overflow: hidden;
+                                    -webkit-box-flex: 0;
+                                    -ms-flex: 0 0 50%;
+                                    flex: 0 0 50%;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    margin: 0;
+                                    img{
+                                        width: 100%;
+                                        -webkit-animation: fadeIn .28s;
+                                        animation: fadeIn .28s;
+                                    }
+                                }
+                                
+                                   
+                                .goods_price{
+                                    font-family: Arial;
+                                    font-size: .5rem;
+                                    font-weight: 700;
+                                    color: #d44d44;
+                                    padding-top: .2rem;
+                                    line-height: .7rem;
+                                    .discont{
+                                        margin-right: .2rem;
+                                    }
+                                    .orignal{
+                                        position: relative;
+                                        font-size: .5rem;
+                                        color: rgba(0,0,0,.3);
+                                        display: inline-block;
+                                    }
+                                    .orignal::after{
+                                        position: absolute;
+                                        content: "";
+                                        border-top: 1px solid #b3b3b3;
+                                        width: 101%;
+                                        top: 47%;
+                                        left: 1px;
+                                    }
+                                    span{
+                                        display: inline-block;
+                                    }
+                                }
+                            }
                             .goods_item{
                                 display: -webkit-box;
                                 display: -ms-flexbox;
@@ -333,6 +422,13 @@
             }
             .four_place_warp:first-child{
                 border: none;
+            }
+        }
+        .full_cloumn{
+            display: flex;
+            height: 6rem;
+            img{
+                width: 100%;
             }
         }
     }

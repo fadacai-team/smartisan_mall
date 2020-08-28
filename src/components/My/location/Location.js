@@ -19,7 +19,7 @@ import Item from 'antd-mobile/lib/popover/Item'
         .then(res =>{
             // console.log(res);
             this.setState({data:res},()=>{
-                console.log(this.state.data);
+                // console.log(this.state.data);
             })
         })
     }
@@ -30,25 +30,25 @@ import Item from 'antd-mobile/lib/popover/Item'
                 <div className={styles.content}>
                     {
                         this.state.data.map((item,index)=>{
-                            return <div className={styles.address} key={item.id}>
+                            return <div className={styles.address} key={index}>
                        
                             <div className={styles.addressInfo}>
-                            <div className={styles.infoTop}>
-                                <div className={styles.name}>
-                                   {item.name}
+                                <div className={styles.infoTop}>
+                                    <div className={styles.name}>
+                                    {item.name}
+                                    </div>
+                                    <div className={styles.number}>
+                                    { item.number}
+                                    </div>
+                                {
+                                    index==0? <em className={styles.iconWrite}>
+                                    默认地址
+                                        </em>:""
+                                }
                                 </div>
-                                <div className={styles.number}>
-                                   { item.number}
+                                <div className={styles.addressDetails}>
+                                {item.province+item.city+item.county+item.details}
                                 </div>
-                               {
-                                   index==0? <em className={styles.iconWrite}>
-                                   默认地址
-                                    </em>:""
-                               }
-                            </div>
-                            <div className={styles.addressDetails}>
-                              {item.province+item.city+item.county+item.details}
-                            </div>
                         </div>
                        
                        

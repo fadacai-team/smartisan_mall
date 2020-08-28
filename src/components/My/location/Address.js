@@ -34,7 +34,7 @@ const AgreeItem = Checkbox.AgreeItem;
         axios.get("/addressData/location.json")
         .then(res=>{
             this.setState({data:res.lcoalData},()=>{
-                console.log(this.state.data);
+                // console.log(this.state.data);
             })
         })
     }
@@ -73,7 +73,9 @@ const AgreeItem = Checkbox.AgreeItem;
                                         <p>{item.text}</p>
                                         {/* 城市选择 */}
                                         <div className={styles.localSelect}>
-                                            <CitySelect locaData={this.state.data[index]}></CitySelect>
+                                            <CitySelect localData={this.state.data}>
+                                                
+                                            </CitySelect>
                                         </div>
                                     </div>
                                 </div>

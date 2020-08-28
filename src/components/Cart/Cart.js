@@ -13,7 +13,6 @@ import {
     flagDel
 } from '../../store/actionCreate/cart'
 import axios from '../../Utils/myaxios'
-
 import TitleBar from '../Common/TitleBar/TitleBar'
 import BottomBar from './CartBottomBar/CartBottomBar'
 import { List ,Map,toJS, fromJS} from 'immutable'
@@ -29,9 +28,7 @@ const Cart = (props) => {
     //mounted时从localstorage拿去数据 或者 从远程数据库里
     useEffect(()=>{
         //从localstorage拿数据
-        // console.log('从localstorage拿数据')
         // var cart = JSON.parse(localStorage.getItem('cart'))
-        // console.log(cart)
         // props.setCart(cart)
         // axios.get('http://119.29.81.194/data/showCart.php').then(res=>{
         //     props.setCart({
@@ -45,28 +42,27 @@ const Cart = (props) => {
     },[])
     useEffect(()=>{
         // var cart = JSON.parse(localStorage.getItem('cart'))
-        // console.log('cart',cart)
         // props.setCart(cart)
         var cart = Map({})
         axios.get('http://119.29.81.194/data/showCart.php').then(res=>{     
-            cart = cart.set('cart_items',fromJS(res))
+            cart = cart.set('cart_items',fromJS(res.data))
             props.setCart(cart)
         }).then(()=>{
             props.setPromotions().then(()=>{
-                console.log('ressssssss',cart.get('cart_items'))
                 var ids = []
                 ids =  cart.get('cart_items').map(v=>{
-                    return v.get('id')
+                    return  v.get('id')
                 }).join(',')
-                console.log(ids)
+                console.log('ids',ids)
                 props.setRenderData(ids).then(res=>{
-                    console.log('promotions and render data completed')
                 }).catch(err=>{
-                    console.log('error in setRenderData',err)
+                    console.log(err)
                 })
             }).catch(err=>{
-                console.log('error in setPromotions',err)
+                console.log(err)
             })
+        }).catch(err=>{
+            console.log(err)
         })
         // var arr = List.union(List(cart.cart_items),List(cart_list))
         
@@ -84,14 +80,14 @@ const Cart = (props) => {
         if(isEditor){
             props.render_list.forEach(v=>{
                 if(v.get('del')){ 
-                    count += v.get('count')
+                    count += (v.get('count')-0)
                 }
             })
             setGoodsCount(count)
         }else{
             props.render_list.forEach(v=>{
                 if(v.get('checked')){ 
-                    count += v.get('count')
+                    count += (v.get('count')-0)
                     totalprice += v.get('price') * v.get('count')
                 }
             })
@@ -121,8 +117,8 @@ const Cart = (props) => {
     },[props.render_list,isEditor])
     return (
         <div style={{position:'relative'}}>
-            <TitleBar edit={changeIsEditor} isedit={isEditor}></TitleBar>
-            <div style={{marginTop:'50px'}}>
+            <TitleBar title="购物车" option="edit" edit={changeIsEditor} isedit={isEditor}></TitleBar>
+            <div style={{marginTop:'2.2rem',marginBottom:'4rem',paddingTop:'.1rem'}}>
                 {
                     props.render_list.map((v,i)=>{
                         return <CartItem flagDel={props.flagDel} updateCount={props.updateItemCount} updateItem={props.updateChoosed} index={i} item={v} key={i} isedit={isEditor}></CartItem>
@@ -155,7 +151,6 @@ const mapDispatchToProps = dispatch => ({
         var url = '/product/skus?ids='+ids+'&with_stock=true&with_spu=true'
         return axios.get(url).then(res=>{
             if(res.data){
-                console.log('ressssssssss render',res.data.list)
                 dispatch(setRenderCart(res.data.list))
             }
         })

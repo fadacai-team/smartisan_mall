@@ -1,4 +1,3 @@
-import List from '../components/list/List'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Detail from '../components/Datail'
 import Regist from '../components/My/regist/Regist'
@@ -9,7 +8,7 @@ import Saled  from '../components/My/saled/Saled'
 import Ticket  from '../components/My/ticket/Ticket'
 import Location from "../components/My/location/Location"
 import Address from "../components/My/location/Address"
-// import GoodList from '../components/GoodList/GoodList'
+import GoodList from '../components/GoodsList/GoodsList'
 import Order from '../components/Cart/Order'
 const routes = [
   
@@ -46,11 +45,6 @@ const routes = [
         component:Ticket
     },
     {
-        path:'/list',
-        component:List,
-        children:[]
-    },
-    {
         path:'/search',
         component:SearchBar,
         children:[]
@@ -60,11 +54,11 @@ const routes = [
         component:Detail,
         children:[]
     },
- 
-    // {
-    //     path:'/goodlist',
-    //     component:GoodList,
-    // },
+
+    {
+        path:'/goodlist/:id',
+        component:GoodList,
+    },
     {
         path:'/order',
         component:Order,
