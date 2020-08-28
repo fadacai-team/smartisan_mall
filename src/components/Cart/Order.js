@@ -36,7 +36,7 @@ function Order(props) {
     
     return (
         <div>
-            <TitleBar></TitleBar>
+            <TitleBar title="订单信息"></TitleBar>
             <div className={style.main_wrapper}>
                 {/* 地址 */}
                 <div className={style.order_card}>

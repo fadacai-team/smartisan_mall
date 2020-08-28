@@ -114,7 +114,7 @@ const Cart = (props) => {
     },[props.render_list,isEditor])
     return (
         <div style={{position:'relative'}}>
-            <TitleBar edit={changeIsEditor} isedit={isEditor}></TitleBar>
+            <TitleBar title="购物车" option="edit" edit={changeIsEditor} isedit={isEditor}></TitleBar>
             <div style={{marginTop:'2.2rem',marginBottom:'4rem',paddingTop:'.1rem'}}>
                 {
                     props.render_list.map((v,i)=>{

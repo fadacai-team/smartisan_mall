@@ -2,7 +2,7 @@ import List from '../components/list/List'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Detail from '../components/Datail'
 import Regist from '../components/My/regist/Regist'
-import GoodList from '../components/GoodList/GoodList'
+import GoodList from '../components/GoodsList/GoodsList'
 import Order from '../components/Cart/Order'
 const routes = [
     {
@@ -25,7 +25,7 @@ const routes = [
         component:Regist,
     },
     {
-        path:'/goodlist',
+        path:'/goodlist/:id',
         component:GoodList,
     },
     {

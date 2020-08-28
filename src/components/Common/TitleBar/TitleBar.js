@@ -10,8 +10,11 @@ function TitleBar(props) {
                     props.history.goBack()
                 }
             } className={style.nav_back}>返回</div>
-    <div className={style.nav_edit} onClick={props.edit}>{props.isedit?'完成':'编辑'}</div>
-            <h1 className={style.nav_title}> 购物车 </h1> 
+            {
+                props.option=="edit"?<div className={style.nav_edit} onClick={props.edit}>{props.isedit?'完成':'编辑'}</div>:""
+            }
+
+            <h1 className={style.nav_title}> {props.title} </h1> 
         </div>
     )
 }
