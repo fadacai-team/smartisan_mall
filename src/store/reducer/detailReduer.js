@@ -1,9 +1,9 @@
-import {Map,List,fromJS,toJS} from 'immutable'
+import {fromJS} from 'immutable'
 import {SET_ALL_DATA,SET_PREVIEW_DATA,SET_URL_PRO,SET_ACTIVE,SET_PRO_NUM,SET_TYPE_ARR,SET_INDEX} from './../actionsType/detailType'
 
 const defaultState = fromJS({
     data:[],
-    nav:[{name:'商品',isNavActive:true},{name:'评价',isNavActive:false},{name:'详情',isNavActive:false},{name:'推荐',isNavActive:false}],
+    nav:[{name:'商品'},{name:'评价'},{name:'详情'},{name:'推荐'}],
     bannerImg:[],
     preview:[],
     proDetailUrl:[],
@@ -12,6 +12,7 @@ const defaultState = fromJS({
     optionType:'add',
     toLocalStorage:{id:'',count:undefined,unpateTime:''},
     chooseType:[],
+    productType:[],
     proNum:1,
     index:0,
     documentType:'button'
@@ -40,9 +41,7 @@ export default function (state = defaultState,action){
         case SET_PREVIEW_DATA:
             return state.set('preview',fromJS(action.previewParams))
         case SET_ACTIVE:
-            console.log(5156)
             let dataBool = false
-            console.log(action.payload.buttonType,action.payload.optionType,action.payload.isShow)
             if(action.payload.buttonType === 'button'){
                 let dataBool = false
                 if(action.payload.isShow === 'hide'){
@@ -57,8 +56,13 @@ export default function (state = defaultState,action){
         case SET_PRO_NUM:
             return state.set('proNum',state.get('proNum')+action.num)
         case SET_TYPE_ARR:
-            return state.setIn(['chooseType',action.payload.index],action.payload.sku_id)
+            let typeProduct = []
+            if(typeProduct.indexOf(action.payload.typePro) == -1){
+                typeProduct.push(action.payload.typePro)
+            }
+            return state.setIn(['chooseType',action.payload.index],action.payload.sku_id).set('productType',typeProduct)
         case SET_INDEX:
+            let arrType = []
             return state.set('index',action.chooseIndex)    
         default:
             break
