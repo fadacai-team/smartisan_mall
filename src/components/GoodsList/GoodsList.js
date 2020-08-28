@@ -30,7 +30,7 @@ export default function GoodsList(props) {
                     gifts:[],
                     checked:true,
                     del:false,
-                    spu_id:v.spu_id
+                    spu_id:v.spu_id || v.spuInfo.spuId
                 })
             })
             setRenderList(list)
