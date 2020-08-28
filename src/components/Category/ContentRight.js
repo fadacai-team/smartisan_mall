@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import rightStyle from './ContentRight.module.scss'
+import {withRouter} from 'react-router-dom'
 
-export default class ContentRight extends Component {
+class ContentRight extends Component {
     constructor(props){
         super(props)
     }
@@ -19,7 +20,10 @@ export default class ContentRight extends Component {
                                         <ul className={rightStyle.kindList}>
                                             {item.third.map(
                                                 (every)=>{
-                                                    return <li className={rightStyle.kind} key={every.classifyId}>
+                                                    return <li className={rightStyle.kind} key={every.classifyId} onClick={() => {
+                                                        this.props.history.push('/goodlist/'+every.classifyId)
+                                                    }
+                                                    }>
                                                             <img src={every.image+'?x-oss-process=image/resize,w_160/format,webp'} className={rightStyle.kindImage}/>
                                                             <p className={rightStyle.kindTitle}>{every.classifyName}</p>
                                                         </li>
@@ -37,3 +41,6 @@ export default class ContentRight extends Component {
 
     
 }
+
+
+export default withRouter (ContentRight)
