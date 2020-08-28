@@ -49,11 +49,9 @@ function CartItem(props) {
     let render_item= props.item.toJS()
     return (
         <div className={style.group_sub}>
-
             {
                 props.noTag?"": getGifts()
             }
-
             <div className={style.cart_item}>
             {
                 props.noCheck?'':(
@@ -76,13 +74,11 @@ function CartItem(props) {
                     src={render_item.imageurl+"?x-oss-process=image/resize,w_180/format,webp"}/>
                 </div>
                 <div className={style.item_info_wraper}>
-
                     <div  className={style.colorful_tag_container}>  
                         {
                             props.noTag?"": getTag()
                         }
                     </div>
-
                     <h4 className={style.title}>
                         {render_item.name}
                     </h4> 
@@ -126,8 +122,6 @@ function CartItem(props) {
                                     </div>
                             }
                         
-
-
                 </div>
             </div>
         </div>
