@@ -1,8 +1,8 @@
-import React, { Component } from './node_modules/react'
+import React, { Component } from 'react'
 // /mobile/waterfall?page=1&pageSize=20
 import styles from './List.module.scss'
 import axios from '../../Utils/myaxios'
-import { connect } from './node_modules/react-redux'
+import { connect } from 'react-redux'
 import {goodsWater} from '../../store/actionCreate/goodswarp'
 import ListItem from '../ListItem/ListItem'
 class List extends Component {
