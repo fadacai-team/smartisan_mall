@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 // import axios from '../../Utils/myaxios'
 // import { connect } from 'react-redux'
 import {GoodsROWData} from '../../store/actionCreate/goodswarp'
-
+import ImgWarp from '../imgWarp/ImgWarp'
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import GoodsRow from '../GoodsRow/GoodsRow'
 import List from "../List/List"
@@ -61,7 +61,7 @@ class Home extends Component {
             this.setState({title3:data.data[3].content[1].floor[0]})
             this.setState({title4:data.data[3].content[1].floor[1]})
             this.setState({list:data.data[3].content[2].floor})
-            this.setState({full_img:data.data[7].skuInfo})
+            this.setState({full_img:data.data[7].content})
             // this.setState({goodswarp1:data.data[4]})
             // this.setState({goodswarp2:data.data[5]})
             console.log(this.state.title1)
@@ -344,7 +344,7 @@ class Home extends Component {
                                                             <img src={v.skuInfo[0].images}></img>
                                                         </figure>
                                                         <p className={styles.goods_price} style={{textAlign:'center',width:"71px"}}>
-                                                            {v.skuInfo[0].discountPrice == v.skuInfo[0].originalPrice ? <span>¥{parseFloat(v.skuInfo[0].discountPrice)}</span> : <div><span className={styles.discont}>¥{parseFloat(v.skuInfo[0].discountPrice)}</span><span className={styles.orignal}>¥{parseFloat(v.skuInfo[0].originalPrice)}</span></div>}
+                                                            {v.skuInfo[0].discountPrice == v.skuInfo[0].originalPrice ? <span>¥{parseFloat(v.skuInfo[0].discountPrice)}</span> : <p><span className={styles.discont}>¥{parseFloat(v.skuInfo[0].discountPrice)}</span><span className={styles.orignal}>¥{parseFloat(v.skuInfo[0].originalPrice)}</span></p>}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -364,7 +364,7 @@ class Home extends Component {
                         <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>
                         {/* ImgWarp开始 */}
-                            {/* <ImgWarp></ImgWarp> */}
+                            <ImgWarp></ImgWarp>
                         {/* ImgWarp结束 */}
                             {/* <GoodsRow data={this.props.Digital}></GoodsRow> */}
                         {/* <section className={styles.has_margin_bottom}></section>
@@ -378,18 +378,18 @@ class Home extends Component {
                             <GoodsRow data={this.props.Kitchenware}></GoodsRow>  */}
                             
                         {/* full-img开始 */}
-                            {/* <section className={styles.full_cloumn}>
-                                {console.log(this.state)}
+                            <section className={styles.full_cloumn}>
+                                {/* {console.log(this.state)} */}
                                 {this.state.full_img != []? this.state.full_img.map((v,i)=>{
                                     return (
                                         // https://resource.smartisan.com/resource/f895257e7fc46efd688ed0e860109898.png?x-oss-process=image/resize,w_375/format,webp
                                         <div key={i}>
                                        
-                                            <img src={v.images + "?x-oss-process=image/resize,w_375"}></img>
+                                            <img src={v.src + "?x-oss-process=image/resize,w_375"}></img>
                                         </div>
                                     )
                                 }) : ' hahaha'}
-                            </section> */}
+                            </section>
                         {/* full-img结束 */}
                         <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>

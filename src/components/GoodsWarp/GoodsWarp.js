@@ -18,7 +18,7 @@ class GoodsWarp extends Component {
            {
             this.props.goods_rows.map((v,i)=>{
                 return (
-                    <div className={styles.goods_row_warp} key={i} style={{marginBottom:"15px"}}>
+                    <div key={i} className={styles.goods_row_warp} key={i} style={{marginBottom:"15px"}}>
                         <title className={styles.module_title_warp + " " + styles.arrow_right_icon}>
                             <h3 style={{color:v.titleConfig.titleColor}}>{v.titleConfig.title}</h3>
                             <a className={styles.link} style={{color:v.titleConfig.linkTextColor}}>

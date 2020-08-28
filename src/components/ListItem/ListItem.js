@@ -34,7 +34,7 @@ export default class ListItem extends Component {
                                         //         </h3>
                                         //     </article>
                                         // </section>
-                                        <GoodsItem data={v}></GoodsItem>
+                                        <GoodsItem key={i} data={v}></GoodsItem>
                                     )
                                 }
                             })

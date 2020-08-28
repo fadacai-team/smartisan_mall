@@ -6,7 +6,7 @@ import {goodsData} from '../../store/actionCreate/goodswarp'
 class ImgWarp extends Component {
     componentDidMount(){
         this.props.goodsData().then(()=>{
-            console.log(this.props)
+            // console.log(this.props)
         })
         // console.log(this.props)
         // console.log(this.props.def)
@@ -27,7 +27,7 @@ class ImgWarp extends Component {
                                     </a>
                                 </title>
                                     <aside className={styles.common_flex_box + " " + styles.flex_three + " " + styles.img_scroll}>
-                                        {v.goods.map((j,i)=>{
+                                        {v.content.map((j,i)=>{
                                             return ( 
                                                 // https://resource.smartisan.com/resource/23b8aa7b361a7d65a0a52f20f167ef0a.png?x-oss-process=image/resize,w_190/format,webp
                                                 <div className={styles.flex_item} key={i}>

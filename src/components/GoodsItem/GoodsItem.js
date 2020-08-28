@@ -5,11 +5,17 @@ export default class GoodsItem extends Component {
         super(props)
         // console.log(props)
     }
-    // getPrice(){
-    //     if(this.props.data.promotionList[0]){
-
-    //     }else if()
-    // }
+    getPrice(){
+        if(this.props.data.promotionList[0]){
+            if(this.props.data.promotionList[0].tag){
+                return <span className={styles.tag + " " + styles.red }>{this.props.data.promotionList[0].describe}</span>
+            }else{
+                return ''
+            }
+        }else{
+            return ''
+        }
+    }
     render() {
         return (
             <React.Fragment>
@@ -28,8 +34,8 @@ export default class GoodsItem extends Component {
                             </h3>
                         </article>
                         {this.props.data.promotionList === [] ? "jjj" : <aside className={styles.item_promotion_tage}>
-                                
-                            {this.props.data.promotionList[0] ? <span className={styles.tag + " " + styles.red }>{this.props.data.promotionList[0].describe}</span> : ''}
+                            {this.getPrice()}
+                            {/* {this.props.data.promotionList[0] ? <span className={styles.tag + " " + styles.red }>{this.props.data.promotionList[0].describe}</span> : ''} */}
                                
                         </aside>}
                         <article className={styles.item_bottom_info}>
