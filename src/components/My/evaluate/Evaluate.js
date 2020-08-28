@@ -1,12 +1,27 @@
 import React, { Component } from 'react'
 import Title from "../order/Title"
 import Tabs from "../com/Tabs"
+import MaybeLike from "../../Common/maybeLike/MaybeLike"
 import styles from "./Evaluate.module.scss"
+import axios from "../../../Utils/myaxios"
 let data =[
     {text:"待评价",num:0},
     {text:"已评价",num:0},
 ]
 export default class Evaluate extends Component {
+    constructor(props){
+        super(props)
+       
+    }
+    componentDidMount(){
+        axios.get("https://shopapi.smartisan.com/mobile/skulist?page=1")
+        .then(res=>{
+            console.log(res.data.skuInfo);
+            this.setState({shopList:res.data.skuInfo},()=>{
+
+            })
+        })
+    }
     render() {
         return (
             <div className={styles.title}>
@@ -27,54 +42,10 @@ export default class Evaluate extends Component {
                             </dd>
                         </div>
                     </div>
-                    <div className={styles.maybeLike}>
-                        <h1>
-                            猜你喜欢
-                        </h1>
-                        <div className={styles.shopList}>
-                            {
-                                shopList.map(item=>{
-                                    return <dl >
-                                    <dt>
-                                        <img src={item.path}/>
-                                    </dt>
-                                    <dd>
-                                        <h3>{item.text}</h3>
-                                        <div className={styles.shopInfo}>
-                                        <span>￥{item.price}</span>
-                                        <b>￥{item.originPri}</b>
-                                            <i>直聘</i>
-                                        </div>
-                                    </dd>
-                                </dl>
-                                })
-                            }
-                          
-                            
-                        </div>
-                    </div>
-                    <div className={styles.footer}>
-                            没有更多了
-                    </div>
+                    <MaybeLike></MaybeLike>
               </div>
             </div>
         )
     }
 }
-let shopList=[
-    {text:"坚果Pro 3",price:"2599.00" ,originPri:"3499.00",path:"https://resource.smartisan.com/resource/9934374dda26c292555dd1ec0887e17b.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"坚果R1",price:"2599.00" ,path:"https://resource.smartisan.com/resource/17f254e6f809355d8fe66260ccb48fb0.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"坚果Pro 2S",price:"1998.00" ,path:"https://resource.smartisan.com/resource/25cc6e783a664fbdf83c3c34774a9826.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/2c3376d7cee14ca0b28e64683601b941.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/00582ef9b4b5abfe655e5caa72761ea5.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/0142497872c65304c050607aae1c2ea6.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/4fb7b4e5424dde7133c422600d9668b9.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/5220f01be7fec8b32b77f46d7c36c97e.png?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/7a777a670feb26d544c45592f0d0db55.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/375d34e446f1fd266eccfb7b5cd3e3ad.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/a0df46b9504eae81b7e29ee08b4ef6c6.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"Smartisan T恤萌锤",price:"79.00" ,originPri:"129.00",path:"https://resource.smartisan.com/resource/9dcb06d4609e33e448852e181d81a443.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"倍轻松按摩腰枕BM1801",price:"541.00" ,originPri:"598.00",path:"https://resource.smartisan.com/resource/7f4a299652cfeef949df19b51edc1eaa.jpg?x-oss-process=image/resize,w_326/format,webp"},
-    {text:"倍轻松夹揉按摩披肩SK-011",price:"1406.00" ,originPri:"1580.00",path:"https://resource.smartisan.com/resource/8cc14dfade451b77b642408497647ab3.jpg?x-oss-process=image/resize,w_326/format,webp"}
-    
-]
+

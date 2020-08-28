@@ -1,36 +1,46 @@
 import React, { Component } from 'react'
 import styles from "./OrderDetails.module.scss"
 export default class allOrder extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            
+        }
+    }
     render() {
         return (
             <div className={styles.orderDetails}>
                 <div className={styles.orderTime}>
                 <dt>订单日期:
-                    <span>{"2020-08-26 09:44"}</span>
+                    <span>{this.props.data.orderTime}</span>
                 </dt>
-                    <dd>待付款</dd>
+                    <dd className={(this.props.data.payType=="待付款"?"":styles.colorChange)}>{this.props.data.payType}</dd>
                 </div>
                 <div className={styles.orderInfo}>
-                    <dt><img src="https://resource.smartisan.com/resource/8407bd8a1c74d23edbf2d1f7613380c4.jpg?x-oss-process=image/resize,w_180/format,webp"></img></dt>
+                    <dt><img src={this.props.data.img}></img></dt>
                     <dd>
                         <div className={styles.shopTitle}>
-                        坚果 Pro 3 足迹保护套 莫里斯·詹姆士·麦当劳出生（莫里斯·詹姆士·麦当劳出生）
+                        {this.props.data.title}
                         </div>
                         <div className={styles.shopPrice}>
-                            <span>￥49</span> x {1}
+                            <span>￥{this.props.data.price}</span> x  {this.props.data.count}
                         </div>
                     </dd>
                     <div className={styles.rightIcon}></div>
                 </div>
-                <div className={styles.orderPay}>
+                <div className={styles.orderPay+" "+(this.props.data.payType=="待付款"?"":styles.colorChange)}>
                     <dt>
-                        实际金额
-                        <span>￥49.00</span>
+                        实际金额 :
+                        <span className={(this.props.data.payType=="已完成"?styles.colorChange:"")}>￥{this.props.data.price*this.props.data.count}</span>
                     </dt>
                     <dd>
-                        <div className={styles.payButton}>
+                       {
+                           this.props.data.payType=="待付款" ?
+                           <div className={styles.payButton}>
                            现在付款
-                        </div>
+                           </div>:
+                           ""
+                       }
                     </dd>
                 </div>
             </div>

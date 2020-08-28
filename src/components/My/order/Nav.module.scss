@@ -21,13 +21,14 @@
                 border-right: 1px solid #E0E0E0;
                 font-size: 14px;
                 font-weight: 700;
-                &:hover{
-                    background-color: #b1b1b1;
-                    color: white;
-                }
             }
             .borderNone{
                 border: none;
+            }
+            .active{
+                background-color: #B0B0B0;
+                color: white; 
+                
             }
         }
       }

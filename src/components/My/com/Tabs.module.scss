@@ -21,16 +21,18 @@
          font-size: .675rem;
         font-weight: 700;
         border-right: 1px solid #dddddd;
-        &:hover{
-            background-color: #b1b1b1;
-            color: white;
-        }
+      
         span {
             margin-right: 5px;
         }
+      }
+      .active{
+        background-color: #b1b1b1;
+        color: white;
       }
       .borderNone{
           border-right: none;
       }
     }
+  
   }

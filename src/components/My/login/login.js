@@ -27,9 +27,9 @@ import cookie from "react-cookies"
             })
         }
     }
-    goTo= (path)=>{    
+    goTo= (path,index)=>{    
             if(loginUser()){
-                this.props.history.push(path);
+                this.props.history.push(path,index);
             }else{
                 this.props.history.push("/my/regist");
             }
@@ -50,15 +50,15 @@ import cookie from "react-cookies"
                         <div className={styles.userImg}>
                             <img src="https://static.smartisanos.cn/mobilenew/img/head.4b81d150.png"></img>
                         </div>
-        <Link className={styles.loginText} to="/my/regist">{this.state.title}</Link>
+        <div className={styles.loginText} onClick={this.handleClick.bind(this)}>{this.state.title}</div>
                     </div>
                     <div className={styles.loginRight} onClick={this.handleClick.bind(this)}></div>
                 </div>
                 <div className={styles.menu +" "+(this.state.isShow?styles.show:styles.hidden)}>
                    {
-                        data.map(item=>{
+                        data.map((item,index)=>{
                             return <dl className={styles.menuItem+" "+(item.text
-                            =="售后"?styles.borderNone:"")} key={item.text} onClick={this.goTo.bind(this,item.path) } title={item.title}>
+                            =="售后"?styles.borderNone:"")} key={item.text} onClick={this.goTo.bind(this,item.path) } title={item.title} mark={index}>
                                     <dt>
                                         <img src={item.icon}></img>
                                     </dt>

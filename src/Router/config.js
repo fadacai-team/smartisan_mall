@@ -2,14 +2,14 @@ import List from '../components/list/List'
 import SearchBar from '../components/SearchBar/SearchBar'
 import Detail from '../components/Datail'
 import Regist from '../components/My/regist/Regist'
-import Order from "../components/My/order/Order"
+import MyOrder from "../components/My/order/Order"
 import Details  from '../components/My/login/Details'
 import Evaluate  from '../components/My/evaluate/Evaluate'
 import Saled  from '../components/My/saled/Saled'
 import Ticket  from '../components/My/ticket/Ticket'
 import Location from "../components/My/location/Location"
 import Address from "../components/My/location/Address"
-import GoodList from '../components/GoodList/GoodList'
+// import GoodList from '../components/GoodList/GoodList'
 import Order from '../components/Cart/Order'
 const routes = [
   
@@ -19,7 +19,7 @@ const routes = [
     },
     {
         path:'/my/order',
-        component:Order,
+        component:MyOrder,
     },
     {
         path: '/my/details',
@@ -30,7 +30,7 @@ const routes = [
         component:Location
     },
     {
-        path: '/my/Address',
+        path: '/my/address',
         component:Address
     },
     {
@@ -60,14 +60,11 @@ const routes = [
         component:Detail,
         children:[]
     },
-    {
-        path:'/my/regist',
-        component:Regist,
-    },
-    {
-        path:'/goodlist',
-        component:GoodList,
-    },
+ 
+    // {
+    //     path:'/goodlist',
+    //     component:GoodList,
+    // },
     {
         path:'/order',
         component:Order,

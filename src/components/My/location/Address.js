@@ -4,10 +4,14 @@ import styles from "./Address.module.scss"
 import { List,Checkbox,Flex } from 'antd-mobile';
 import {withRouter} from "react-router-dom"
 import axios from "../../../Utils/myaxios"
+import CitySelect from "./citySelect"
 const AgreeItem = Checkbox.AgreeItem;
  class Address extends Component {
     constructor(props){
         super(props)
+        this.state={
+            data:[]
+        }
     }
     handleCheckButton(){
         let params = new URLSearchParams();
@@ -21,12 +25,18 @@ const AgreeItem = Checkbox.AgreeItem;
         params.append('time',new Date().getTime()/1000);
         axios.post("http://119.29.81.194/data/showAddress.php",params)
         .then(res=>{//如果返回为真，跳转至个人中心
-            console.log(res);
+            // console.log(res);
 
-        }).catch(err=>{
-            console.log(err);
         })
-        // this.props.history.go(-1)
+        this.props.history.go(-1)
+    }
+    componentDidMount(){
+        axios.get("/addressData/location.json")
+        .then(res=>{
+            this.setState({data:res.lcoalData},()=>{
+                console.log(this.state.data);
+            })
+        })
     }
     
     render() {
@@ -56,13 +66,14 @@ const AgreeItem = Checkbox.AgreeItem;
                     data.map((item,index)=>{
                         return <div className={styles.iptWrap} key={item[0].text}>
                             {
-                                data[index].map(item=>{
+                                data[index].map((item,index)=>{
                                     return  <div className={styles.inputItem} key={item.text}>
                                     <input placeholder={item.text} className={(item.type=="select"?styles.hidden:styles.show)}></input >
                                     <div className={styles.cityChoose+" "+(item.type=="input"?styles.hidden:"")}>
                                         <p>{item.text}</p>
-                                        <div>
-                                        请选择
+                                        {/* 城市选择 */}
+                                        <div className={styles.localSelect}>
+                                            <CitySelect locaData={this.state.data[index]}></CitySelect>
                                         </div>
                                     </div>
                                 </div>
