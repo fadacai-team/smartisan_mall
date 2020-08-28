@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './GoodsItem.module.scss'
-import {useSpring, animated, interpolate } from 'react-spring'
+import {useSpring, animated } from 'react-spring'
 
 const to = i => ({ x: 0, y: 0 , scale: 1, rot: 0, delay: i * 100 })
 const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1200 })
@@ -22,14 +22,12 @@ export default function GoodsItem(props){
         }
         return (
             <React.Fragment>
-                
                             <animated.div 
                                 style={ myanimation } 
                             >
                                 <section key={props.data.skuId} className={styles.flow_item + " " + styles.sku_item + " " + styles.waterfall } >
                                     <figure className={styles.item_cover}>
                                         <aside className={styles.item_promotion_tage + " " + styles.sign}>
-
                                         </aside>
                                         <img src={props.data.images + '?x-oss-process=image/resize,w_324/format,webp'} className={styles.animation}></img>
                                     </figure>
@@ -40,7 +38,6 @@ export default function GoodsItem(props){
                                     </article>
                                     {props.data.promotionList === [] ? "jjj" : <aside className={styles.item_promotion_tage}>
                                         {getPrice()}
-                                        {/* {props.data.promotionList[0] ? <span className={styles.tag + " " + styles.red }>{props.data.promotionList[0].describe}</span> : ''} */}
                                     </aside>}
                                     <article className={styles.item_bottom_info}>
                                         <aside className={styles.item_price}>

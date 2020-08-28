@@ -22,9 +22,9 @@ var cartState = fromJS({
     cart_render_list:[],
     cart:{
         cart_items:[
-            {id: 100142001, count: 1 ,unpateTime:1598268595478},
-            {id: 100059411, count: 3 , unpateTime:1598268595478},
-            {id: 100145701, count: 1 , unpateTime:1598268595478}
+            // {id: 100142001, count: 1 ,unpateTime:1598268595478},
+            // {id: 100059411, count: 3 , unpateTime:1598268595478},
+            // {id: 100145701, count: 1 , unpateTime:1598268595478}
         ],
         unlogin_items:[
             {id: 100142001, count: 1 , unpateTime:1598268595478},
@@ -38,13 +38,11 @@ var cartState = fromJS({
 })
 
 function getRenderCartList(origin_list,state){
-    console.log(state)
     var new_render_list =  origin_list.map(v=>{
         var gifts = state.get('promotions').filter(pv=>{
             return pv.getIn(['rule','condition','main_skus']).includes(v.id) 
         })
         var currentItem = state.getIn(['cart','cart_items']).filter(item=>{
-            console.log()
             return item.get('id') == v.id
         }).get(0)
         return Map({
@@ -69,7 +67,6 @@ function syncCart(state){
             {id: v.get('id'), count: v.get('count') ,unpateTime:new Date().getTime()},
         )
     })
-    console.log('cart sync to localstorage')
     localStorage.setItem('cart',JSON.stringify(state.get('cart').toJS()))
     return fromJS(newCartState)
 }
@@ -96,7 +93,6 @@ export default function(state = cartState, action){
         //获取优惠信息
         case SET_PROMOTIONS:
             var promotions = state.set('promotions',fromJS(action.promotions))
-            console.log('promotions seted')
             return promotions
         //更新购物车选择
         case UPDATE_ISCHOOSED:
@@ -116,7 +112,6 @@ export default function(state = cartState, action){
             return
         //全选不全选购物车列表
         case CECHK_ALL_CART_ITEMS:
-            console.log(action.optiontype)
             if(action.optiontype=='del'){
                 return state.setIn(['cart_render_list'],state.get('cart_render_list').map(v=>{
                                     return v.set('del',action.ischeckall)
@@ -145,7 +140,6 @@ export default function(state = cartState, action){
             var newrenderlist = state.get('cart_render_list').filter((v,i)=>{
                 return v.get('del')==false
             })
-            console.log('new list',newrenderlist)
             return state.set('cart_render_list',newrenderlist)
 
 

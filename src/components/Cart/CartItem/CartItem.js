@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {withRouter} from 'react-router-dom'
 import style from './style.module.scss'
 
@@ -37,7 +37,7 @@ function CartItem(props) {
                 gifts.push(
                     <div key={i} className={style.promotion_title +" "+ style.item}> 
                         <div className={style.promotion_type}> 
-                            <h4>{list[i].type==1?'赠':""}</h4> 
+                            <h4>{list[i].type===1?'赠':""}</h4> 
                         </div> 
                         <p> {list[i].description}</p> 
                     </div>

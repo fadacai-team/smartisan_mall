@@ -4,20 +4,14 @@ import { Carousel } from "antd-mobile";
 import {withRouter} from 'react-router-dom'
 import axios from '../../Utils/myaxios'
 import { connect } from 'react-redux'
-// import axios from '../../Utils/myaxios'
-// import { connect } from 'react-redux'
 import {GoodsROWData} from '../../store/actionCreate/goodswarp'
 import ImgWarp from '../imgWarp/ImgWarp'
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import {goodsWater} from '../../store/actionCreate/goodswarp'
 
-import GoodsRow from '../GoodsRow/GoodsRow'
 import List from "../List/List"
 class Home extends Component {
-    // constructor(props){
-    //     super(props)
-    //     console.log(props)
-    // }
+
     state = {
         swiper_list:[],
         imgHeight: 176,
@@ -146,6 +140,7 @@ class Home extends Component {
                             display: "inline-block",
                             width: "100%",
                             height: this.state.imgHeight,
+                            touchAction:'pan-y'
                             }}
                             >
                             <img
@@ -331,8 +326,6 @@ class Home extends Component {
                                                                 ¥{parseFloat(v.originalPrice)}
                                                             </span>
                                                         </p>
-                                                       
-                                                        
                                                     </div>
                                                 )
                                             }) :''}
@@ -358,9 +351,9 @@ class Home extends Component {
                                                         <figure>
                                                             <img src={v.skuInfo[0].images}></img>
                                                         </figure>
-                                                        <p className={styles.goods_price} style={{textAlign:'center',width:"71px"}}>
+                                                        <div className={styles.goods_price} style={{textAlign:'center',width:"71px"}}>
                                                             {v.skuInfo[0].discountPrice == v.skuInfo[0].originalPrice ? <span>¥{parseFloat(v.skuInfo[0].discountPrice)}</span> : <p><span className={styles.discont}>¥{parseFloat(v.skuInfo[0].discountPrice)}</span><span className={styles.orignal}>¥{parseFloat(v.skuInfo[0].originalPrice)}</span></p>}
-                                                        </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -399,7 +392,7 @@ class Home extends Component {
                                     return (
                                         // https://resource.smartisan.com/resource/f895257e7fc46efd688ed0e860109898.png?x-oss-process=image/resize,w_375/format,webp
                                         <div key={i}>
-                                       
+
                                             <img src={v.src + "?x-oss-process=image/resize,w_375"}></img>
                                         </div>
                                     )

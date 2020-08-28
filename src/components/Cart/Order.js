@@ -63,7 +63,7 @@ function Order(props) {
                         }
                     } className={style.item +" "+ style.wechat_pay}> 
                         <span className={style.name}>微信支付</span>  
-                        <span className={style.payment_check +" "+ (props.payment=='wechat'?style.active:'')}></span> 
+                        <span className={style.payment_check +" "+ (props.payment==='wechat'?style.active:'')}></span> 
                     </li>
                     <li onClick={
                         ()=>{
@@ -71,7 +71,7 @@ function Order(props) {
                         }
                     } className={style.item +" "+ style.ali_pay}> 
                         <span className={style.name}>支付宝</span>  
-                        <span className={style.payment_check +" "+ (props.payment=='ali_pay'?style.active:'')}></span> 
+                        <span className={style.payment_check +" "+ (props.payment==='ali_pay'?style.active:'')}></span> 
                     </li>
                     <li onClick={
                         ()=>{
@@ -79,7 +79,7 @@ function Order(props) {
                         }
                     } className={style.item+" "+ style.ant +" "+style.stages_pay}> 
                         <span className={style.name}> 蚂蚁花呗分期 </span> 
-                        <span className={style.payment_check+" "+ (props.payment=='ant'?style.active:'')}></span> 
+                        <span className={style.payment_check+" "+ (props.payment==='ant'?style.active:'')}></span> 
                     </li> 
                     </ul>
                 </div>
