@@ -19,10 +19,11 @@ function CartItem(props) {
     }
     var getTag = (type)=>{
         var tags = []
+        var key=1
         if(type ===9){
             return "满减"
         }
-        tags.push(<span className="colorful-tag red">
+        tags.push(<span key={key} className="colorful-tag red">
             {'满减'}
         </span> )
         return tags

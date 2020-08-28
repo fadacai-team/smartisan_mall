@@ -45,20 +45,24 @@ const Cart = (props) => {
         // props.setCart(cart)
         var cart = Map({})
         axios.get('http://119.29.81.194/data/showCart.php').then(res=>{     
-            cart = cart.set('cart_items',fromJS(res))
+            cart = cart.set('cart_items',fromJS(res.data))
             props.setCart(cart)
         }).then(()=>{
             props.setPromotions().then(()=>{
                 var ids = []
                 ids =  cart.get('cart_items').map(v=>{
-                    return v.get('id')
+                    return  v.get('id')
                 }).join(',')
+                console.log('ids',ids)
                 props.setRenderData(ids).then(res=>{
                 }).catch(err=>{
+                    console.log(err)
                 })
             }).catch(err=>{
+                console.log(err)
             })
         }).catch(err=>{
+            console.log(err)
         })
         // var arr = List.union(List(cart.cart_items),List(cart_list))
         
