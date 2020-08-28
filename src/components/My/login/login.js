@@ -17,13 +17,13 @@ import cookie from "react-cookies"
     componentDidMount(){
         if(loginUser()){
             this.setState({title:cookie.load('number')},()=>{
-                console.log(this.state.title);
+                // console.log(this.state.title);
             })
             
            
         }else{
             this.setState({title:'登录 / 注册'},()=>{
-                console.log(this.state.title);
+                // console.log(this.state.title);
             })
         }
     }

@@ -6,16 +6,19 @@ export default class tabs extends Component {
         this.state={
             current:0
         }
+        
 
     }
     colorChange(index){
         this.setState({current:index},()=>{
-        
+        if(this.props.tabsActive){
+            this.props.tabsChange(index)
+        }
         })
     }
     componentDidMount(){
 
-        console.log(1);
+        // console.log(1);
     }
     render() {
         return (
@@ -28,6 +31,7 @@ export default class tabs extends Component {
                         +" "+(this.state.current == index ? styles.active : ""  )
                         }
                         onClick = {this.colorChange.bind(this,index)}
+                        
                         key = {item.text}>
                             
                             <span>{item.text}</span>

@@ -33,7 +33,6 @@ class Category extends Component {
     
 
     render() {
-        console.log(this.state.itemData)
         return (
             <div className={categroyStyle.categroy}>
                 <div className={categroyStyle.categroyHeader}>

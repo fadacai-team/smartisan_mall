@@ -1,0 +1,29 @@
+.proBanner {
+    height: 80vw;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 5px 13px rgba(0,0,0,.1);
+    margin-bottom: 6px;
+    background: #fff;
+    .bannerLists {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .bannerList{
+            transform-style: preserve-3d;
+            display: inline-block;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            >img{
+                width: 100%;
+                height: 100%;
+                margin: auto;
+
+            }
+        }
+        // position: relative;
+    }
+}

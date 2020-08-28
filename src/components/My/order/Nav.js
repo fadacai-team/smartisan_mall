@@ -42,8 +42,8 @@ const data = [
                 </div>
                 <div className={styles.content}>
                     {                     
-                       shopListData[this.state.current].map(item=>{
-                           return  <OrderDetails data={item}>
+                       shopListData[this.state.current].map((item,index)=>{
+                           return  <OrderDetails data={item} key={item+index}> 
 
                            </OrderDetails>
                        })

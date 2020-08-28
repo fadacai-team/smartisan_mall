@@ -14,7 +14,7 @@ export default class allOrder extends Component {
                 <dt>订单日期:
                     <span>{this.props.data.orderTime}</span>
                 </dt>
-                    <dd className={(this.props.data.payType=="待付款"?"":styles.colorChange)}>{this.props.data.payType}</dd>
+                    <dd className={(this.props.data.payType=="已完成"?styles.colorChange:"")}>{this.props.data.payType}</dd>
                 </div>
                 <div className={styles.orderInfo}>
                     <dt><img src={this.props.data.img}></img></dt>
@@ -35,11 +35,13 @@ export default class allOrder extends Component {
                     </dt>
                     <dd>
                        {
-                           this.props.data.payType=="待付款" ?
+                           this.props.data.payType=="已完成" ?
+                           "":
                            <div className={styles.payButton}>
-                           现在付款
-                           </div>:
-                           ""
+                          {
+                              this.props.data.payType=="待付款"?"现在付款":"确认收货"
+                          }
+                           </div>
                        }
                     </dd>
                 </div>

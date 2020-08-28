@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./uesrInfo.module.scss"
 import {withRouter} from "react-router-dom";
-import {loginUser,logout} from "../cookie/Cookie"
+import {loginUser,logout} from "../../Common/cookie/Cookie"
 import cookie from "react-cookies"
 
  class userInfo extends Component {
@@ -22,7 +22,7 @@ import cookie from "react-cookies"
     componentDidMount(){
         if(loginUser()){
             this.setState({title:cookie.load('number')},()=>{
-                console.log(this.state.title);
+                // console.log(this.state.title);
             })
             
            

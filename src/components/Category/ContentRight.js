@@ -6,7 +6,6 @@ export default class ContentRight extends Component {
         super(props)
     }
     render() {
-        console.log(this.props)
         return (
             <div className={rightStyle.contentWarp}>
                 <div className={rightStyle.banner+' '+(!this.props.contentRightData.banner?rightStyle.bannerNone:'')}>
@@ -36,7 +35,5 @@ export default class ContentRight extends Component {
         )
     }
 
-    componentWillMount(){
-        console.log(this.props)
-    }
+    
 }

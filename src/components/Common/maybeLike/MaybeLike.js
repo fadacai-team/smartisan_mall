@@ -9,7 +9,7 @@ export default class MaybeLike extends Component {
         }
     }
     componentDidMount(){
-        axios.get("https://shopapi.smartisan.com/mobile/skulist?page=1")
+        axios.get("https://shopapi.smartisan.com/mobile/skulist?page="+Math.floor(Math.random()*38))
         .then(res=>{
          
             this.setState({shopList:res.data.skuInfo},()=>{

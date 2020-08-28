@@ -1,5 +1,5 @@
 import SearchBar from '../components/SearchBar/SearchBar'
-import Detail from '../components/Datail'
+import Detail from '../components/detail/Datail'
 import Regist from '../components/My/regist/Regist'
 import MyOrder from "../components/My/order/Order"
 import Details  from '../components/My/login/Details'
@@ -8,6 +8,7 @@ import Saled  from '../components/My/saled/Saled'
 import Ticket  from '../components/My/ticket/Ticket'
 import Location from "../components/My/location/Location"
 import Address from "../components/My/location/Address"
+import PreviewAll from '../components/detail/PreviewAll'
 import GoodList from '../components/GoodsList/GoodsList'
 import Order from '../components/Cart/Order'
 const routes = [
@@ -56,8 +57,12 @@ const routes = [
     },
 
     {
+        path:'/preview',
+        component:PreviewAll
+    },
+    {
         path:'/goodlist/:id',
-        component:GoodList,
+        component:GoodList
     },
     {
         path:'/order',
