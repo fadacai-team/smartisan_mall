@@ -1,6 +1,7 @@
 import SearchBar from '../components/SearchBar/SearchBar'
-import Detail from '../components/Datail'
+import Detail from '../components/detail/Datail'
 import Regist from '../components/My/regist/Regist'
+import PreviewAll from '../components/detail/PreviewAll'
 import GoodList from '../components/GoodsList/GoodsList'
 import Order from '../components/Cart/Order'
 const routes = [
@@ -19,8 +20,12 @@ const routes = [
         component:Regist,
     },
     {
+        path:'/preview',
+        component:PreviewAll
+    },
+    {
         path:'/goodlist/:id',
-        component:GoodList,
+        component:GoodList
     },
     {
         path:'/order',
