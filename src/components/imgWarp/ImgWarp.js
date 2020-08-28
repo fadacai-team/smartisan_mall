@@ -26,7 +26,9 @@ class ImgWarp extends Component {
                                         {v.titleConfig.linkText}
                                     </a>
                                 </title>
-                                    <aside className={styles.common_flex_box + " " + styles.flex_three + " " + styles.img_scroll}>
+                                    <aside onScroll={(e)=>{
+                                        e.stopPropagation()
+                                    }} className={styles.common_flex_box + " " + styles.flex_three + " " + styles.img_scroll}>
                                         {v.content.map((j,i)=>{
                                             return ( 
                                                 // https://resource.smartisan.com/resource/23b8aa7b361a7d65a0a52f20f167ef0a.png?x-oss-process=image/resize,w_190/format,webp

@@ -34,11 +34,12 @@ const setNumAction = (num) => ({
     num,
 })
 
-const setTypeAction = (index,sku_id) => ({
+const setTypeAction = (index,sku_id,typePro) => ({
     type:SET_TYPE_ARR,
     payload:{
         index,
-        sku_id
+        sku_id,
+        typePro
     }
 
 })

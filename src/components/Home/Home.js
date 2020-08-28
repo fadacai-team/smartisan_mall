@@ -387,7 +387,9 @@ class Home extends Component {
                             <GoodsRow data={this.props.Kitchenware}></GoodsRow>  */}
                             
                         {/* full-img开始 */}
-                            <section className={styles.full_cloumn}>
+                            <section className={styles.full_cloumn} onScroll={(e)=>{
+                                e.stopPropagation()
+                            }}>
                                 {/* {console.log(this.state)} */}
                                 {this.state.full_img != []? this.state.full_img.map((v,i)=>{
                                     return (

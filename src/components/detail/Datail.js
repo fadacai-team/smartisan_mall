@@ -1,4 +1,4 @@
-import React, { Component,useRef ,useEffect,useState} from 'react'
+import React, { useRef ,useEffect,useState} from 'react'
 import {connect} from 'react-redux'
 import axios from './.././../Utils/myaxios'
 import {detailAction,activeAction} from './.././../store/actionCreate/detailAction'
@@ -8,7 +8,7 @@ import ProductBanner from './ProductBanner'
 import ProductInfo from './ProductInfo'
 import Preview from './Preview'
 import ProDetail from './ProDetail'
-import {toJS, fromJS} from 'immutable'
+// import {toJS, fromJS} from 'immutable'
 import ToCart from './ToCart'
 
 
@@ -19,9 +19,9 @@ import ToCart from './ToCart'
 function Datail (props){
     
     let [shopNum,setShopNum] = useState(0)
+    let [tabNum,setTabNum] = useState(0)
     let showShopMount = () => {
         axios.get('http://119.29.81.194/data/showCart.php').then((res) => {
-            console.log(res,'dhasdhkankjasaidakjn')
             let lotalMount = 0
             res.data.forEach((item,index) => {
                 lotalMount += item.count/1
@@ -53,11 +53,9 @@ function Datail (props){
         var filtered = []
         for(var i=0;i<attr_ids.length;i++){
             filtered = sku_info.filter((v,index)=>{
-                console.log('----function-----',v.getIn(['spec_json',i,'spec_value_id']),attr_ids[i])
                 return v.getIn(['spec_json',i,'spec_value_id']) == attr_ids[i]
             })
         }
-        console.log('filtered',filtered)
         id = filtered?filtered.getIn([0,'sku_id']):[]
         return id 
     }
@@ -72,7 +70,6 @@ function Datail (props){
                                     id:ids,count:num,unpateTime:nowTime
                                 }
                             }).then((res) => {
-                                console.log(res,'小朋友的接口')
                                 showShopMount()
                                 if(optionType==='pay'){
                                     props.history.push('/order')
@@ -99,7 +96,13 @@ function Datail (props){
                 <div className={detailStyle.detailNav}>
                     <ul className={detailStyle.navLists}>
                         {
-                            navArr.map((item,index) => <li onClick={scrollToItem.bind(null,index)} key={item.name} className={detailStyle.navList + ' ' + (item.isNavActive?detailStyle.navActive:'')}>{item.name}</li> )
+                            navArr.map((item,index) => <li onClick={
+                                // scrollToItem.bind(null,index)
+                                // tabNumClick.bind(null,index)
+                                () => {
+                                    scrollToItem(index)
+                                    setTabNum(index)
+                                }} key={item.name} className={detailStyle.navList + ' ' + (tabNum===index?detailStyle.navActive:'')}>{item.name}</li> )
                         }
                     </ul>
                 </div>
@@ -127,13 +130,10 @@ function Datail (props){
                     </a>
                 </li>
                 <li onClick={() => {
-                    console.log('点击购买',props.documentType,props.isChooseActive)
                     if(props.documentType==='div'){
-                        console.log('pay还是add',props.optionType)
                         props.activeHandleClick('show','pay','button')
                         toCartFunction(props.attrs,props.detailData,props.proNum,props.optionType)
                     }else if(props.documentType==='button' && !props.isChooseActive){
-                        console.log('pay还是add',props.optionType)
                         props.activeHandleClick('hide','pay','button')
                     }
                     }} className={detailStyle.secondItem+' '+detailStyle.addPro+' '+(!props.isButtonActive?'':detailStyle.active)}>
@@ -143,11 +143,9 @@ function Datail (props){
                 </li>
                 <li className={detailStyle.thirdItem+' '+detailStyle.addPro+' '+(!props.isButtonActive?'':detailStyle.active)} onClick={() => {
                     if(props.documentType==='div'){
-                        console.log('pay还是add',props.optionType)
                         props.activeHandleClick('show','add','button')
                         toCartFunction(props.attrs,props.detailData,props.proNum,props.optionType)
                     }else if(props.documentType==='button'){
-                        console.log('pay还是add',props.optionType)
                         props.activeHandleClick('hide','add','button')
                     }
                 }
@@ -170,7 +168,12 @@ function Datail (props){
                     </span>
                 </li>
             </ul>
-            <div ref={mask} className={detailStyle.loving+' '+(props.isChooseActive?'':detailStyle.active)}>
+            <div ref={mask} className={detailStyle.loving+' '+(props.isChooseActive?'':detailStyle.active)} onClick={
+                () => {
+                    if(props.isChooseActive){
+                        props.activeHandleClick('show','','button')
+                    }
+                }}>
                 <ToCart></ToCart>
             </div>
         </div>
@@ -198,7 +201,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setAllData:(ids)=>{
             axios.get('/product/spus?ids='+ids).then((res) => {
-                console.log(res)
                 var str = ''
                 res.data.list[0].sku_info.forEach((item,index) => {
                     if(index<res.data.list[0].sku_info.length-1){
@@ -207,7 +209,6 @@ const mapDispatchToProps = (dispatch) => {
                         str += item.sku_id
                     }
                 })
-                console.log(str)
                 axios.get('/product/skus?ids='+str+'&with_stock=true&with_spu=true').then((res) => {
                     dispatch(detailAction(res.data.list))
                 }
