@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import {GoodsROWData} from '../../store/actionCreate/goodswarp'
 import ImgWarp from '../imgWarp/ImgWarp'
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
+import {goodsWater} from '../../store/actionCreate/goodswarp'
+
 import GoodsRow from '../GoodsRow/GoodsRow'
 import List from "../List/List"
 class Home extends Component {
@@ -29,7 +31,8 @@ class Home extends Component {
         title4:[],
         list:[],
         full_img:[],
-        // page:1
+        page:1,
+        loading:false,
         // goodswarp1:{},
         // goodswarp2:{},
     }
@@ -43,11 +46,26 @@ class Home extends Component {
         }else{
             this.setState({type:false})
         }
+
+        console.log(e.target.scrollHeight - e.target.scrollTop)
+        if(e.target.scrollHeight - e.target.scrollTop<1000 && this.state.loading==false){
+            this.setState({loading:true})
+            this.setState({page:this.state.page+1},()=>{
+                this.props.goodsWater(this.state.page).then(res=>{
+                    this.setState({loading:false})
+
+                })
+            })
+        }
         // if(e.target.scrollTop == 0){
         //     this.setState({type:false})
         // }
     }
+
     componentDidMount(){
+        this.props.goodsWater(1).then(res=>{
+
+        })
         this.props.goodsData().then(()=>{
             console.log(this.props.Digital)
         })
@@ -394,7 +412,7 @@ class Home extends Component {
                         <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>
                         {/* 首页商品列表开始 */}
-                            <List></List>
+                            <List page={this.state.page} goodsItem={this.props.goodsItem} goodsWater1={this.props.goodsWater1}></List>
                         {/* 首页商品列表结束 */}
                     </div>
                     {/* 首页内容结束 */}
@@ -413,6 +431,8 @@ const mapStateToProps = (state)=>{
         Kitchenware:state.getIn(['goodsReducer','Kitchenware']).toJS(),
         // 超然品推荐
         Detachment:state.getIn(['goodsReducer','Detachment']).toJS(),
+        goodsItem:state.getIn(['goodsReducer','goodsItem']).toJS(),
+        goodsWater1:state.getIn(['goodsReducer','goodsWater1']).toJS(),
     }
 }
 const mapDispatchToProps = (dispatch)=>{
@@ -421,6 +441,13 @@ const mapDispatchToProps = (dispatch)=>{
             return axios.get('/mobile/new/home?channel_id=1002').then(res=>{
                 // console.log(res.data)
                 dispatch(GoodsROWData(res.data))
+            })
+        },
+        goodsWater:function(page){
+            // page = 1
+            return axios.get('/mobile/waterfall?page='+page+'&pageSize=20').then(res=>{
+                // console.log(res.data)
+                dispatch(goodsWater(res.data))
             })
         }
     }

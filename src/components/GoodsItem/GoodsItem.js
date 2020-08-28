@@ -26,7 +26,7 @@ export default class GoodsItem extends Component {
                             <aside className={styles.item_promotion_tage + " " + styles.sign}>
 
                             </aside>
-                            <img src={this.props.data.images} className={styles.animation}></img>
+                            <img src={this.props.data.images + '?x-oss-process=image/resize,w_324/format,webp'} className={styles.animation}></img>
                         </figure>
                         <article className={styles.item_title + ' ' + styles.two_line}>
                             <h3>

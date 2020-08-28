@@ -6,14 +6,6 @@ import { connect } from 'react-redux'
 import {goodsWater} from '../../store/actionCreate/goodswarp'
 import ListItem from '../ListItem/ListItem'
 class List extends Component {
-    state={
-        page:1
-    }
-    componentDidMount(){
-        this.props.goodsWater().then(()=>{
-            console.log(this.props)
-        })
-    }
     render() {
         return (
             <React.Fragment>
@@ -52,22 +44,21 @@ class List extends Component {
 }
 
 
-const mapStateToProps = (state)=>{
-    return{
-        goodsItem:state.getIn(['goodsReducer','goodsItem']).toJS(),
-        goodsWater1:state.getIn(['goodsReducer','goodsWater1']).toJS(),
-    }
-}
-const mapDispatchToProps = (dispatch)=>{
-    return {
-        goodsWater:function(){
-            let page = 1
-            return axios.get('/mobile/waterfall?'+page+'&pageSize=20').then(res=>{
-                // console.log(res.data)
-                dispatch(goodsWater(res.data))
-            })
-        }
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(List)
+// const mapStateToProps = (state)=>{
+//     return{
+
+//     }
+// }
+// const mapDispatchToProps = (dispatch)=>{
+//     return {
+//         goodsWater:function(page){
+//             // page = 1
+//             return axios.get('/mobile/waterfall?'+page+'&pageSize=20').then(res=>{
+//                 // console.log(res.data)
+//                 dispatch(goodsWater(res.data))
+//             })
+//         }
+//     }
+// }
+export default List
 
