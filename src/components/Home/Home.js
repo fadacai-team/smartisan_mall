@@ -10,7 +10,7 @@ import {GoodsROWData} from '../../store/actionCreate/goodswarp'
 
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import GoodsRow from '../GoodsRow/GoodsRow'
-import List from "../List/List"
+import List from "../Listjj'/List"
 class Home extends Component {
     // constructor(props){
     //     super(props)
