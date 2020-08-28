@@ -34,7 +34,7 @@ export default class ListItem extends Component {
                                         //         </h3>
                                         //     </article>
                                         // </section>
-                                        <GoodsItem key={i} data={v}></GoodsItem>
+                                        <GoodsItem key={i} data={v} index={i}></GoodsItem>
                                     )
                                 }
                             })
@@ -61,7 +61,7 @@ export default class ListItem extends Component {
                                                     // </span>
                                         //         </article>}
                                         // </section>
-                                        <GoodsItem data={v}></GoodsItem>
+                                        <GoodsItem key={i} data={v} index={i}></GoodsItem>
                                     )
                                 }
                             })

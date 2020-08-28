@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {withRouter} from 'react-router-dom'
 import style from './style.module.scss'
 
@@ -37,7 +37,7 @@ function CartItem(props) {
                 gifts.push(
                     <div key={i} className={style.promotion_title +" "+ style.item}> 
                         <div className={style.promotion_type}> 
-                            <h4>{list[i].type==1?'赠':""}</h4> 
+                            <h4>{list[i].type===1?'赠':""}</h4> 
                         </div> 
                         <p> {list[i].description}</p> 
                     </div>
@@ -49,11 +49,9 @@ function CartItem(props) {
     let render_item= props.item.toJS()
     return (
         <div className={style.group_sub}>
-
             {
                 props.noTag?"": getGifts()
             }
-
             <div className={style.cart_item}>
             {
                 props.noCheck?'':(
@@ -68,21 +66,19 @@ function CartItem(props) {
                     </div>
                 )
             }
-            <div className={style.cart_item_wraper}>
+            <div className={style.cart_item_wraper} style={props.noCheck?{paddingLeft:'.6rem'}:{}}>
                 <div className={style.item_thumb} onClick={()=>{
-                    props.history.push('/goodlist')
+                    // props.history.push('/')
                 }}>
                     <img alt={render_item.name} className="item-thumb-img" height="90" width="90" 
                     src={render_item.imageurl+"?x-oss-process=image/resize,w_180/format,webp"}/>
                 </div>
                 <div className={style.item_info_wraper}>
-
                     <div  className={style.colorful_tag_container}>  
                         {
                             props.noTag?"": getTag()
                         }
                     </div>
-
                     <h4 className={style.title}>
                         {render_item.name}
                     </h4> 
@@ -126,8 +122,6 @@ function CartItem(props) {
                                     </div>
                             }
                         
-
-
                 </div>
             </div>
         </div>
