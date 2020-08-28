@@ -26,8 +26,14 @@
             }
         
             .listItemRight {
-        
+              display: inline-block;
+              width: .3rem;
+              height: .5rem;
+              right: .6rem;
+              background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAITSURBVHgBtZVPS8NAEMV3k0BP6kEtWHu0tZ+hHhWP9ui3VNGPY4WKf0DQU7Qo2Mb30pkwhKTNVn0wnWy2+8vLzmbXuX9QXHHvAPGN+HJ/AU2SZDifz09x2UPcrgu2UAKHURS5LMtavwErdChBoCPYe99C9NAOBkfFRRRlEjkbrjPkjTiOz5HbLkDq9AGOthBtOlW3ohbaA+QJ4iMESo0RW4DtKhjhEXQfIx2i/74JuLykxnSMvCsFKxxjfhMBTxDTEKg63uRUCIzzi+T5EP5/JTiuuX9HMB0LjHAn18kqcB20ANMxVwVNy4rwMk7neBoCVTCrv0e3VnhQYoo3DYE6GUR1DTCf5zrHTaDUo+R9/pRck9G34KZQBXvjOJ9fupbiETwhOASq4MKxdS0fSO44FEo9Se4KrFhydIx2P3HriWs433xQsPwGs7SzdaAniIEF6qeMNrfIi8iFSYH51igfBcX2J4GI18ZQHDXHBIoj25WJw0sCecM3Q7oCKNJxdErglQJt51IgXnNgCmH7UnGYuoonVomH3xGBbNiiyHUqDtPyQL8EOELslDvkUExns1klsA7awmE3wqAyULe9WoeqpAqIL2NbIGWtBFLREqCuQ41GQMob4BleebvmfwRduwZASl9/SIfmrHfijpV+DwFa6JucP+W1GAykdOt7cYup6GSLDVKrfOMCgRZKPUvuiMO1gNQPm18nYBaJHDEAAAAASUVORK5CYII=) no-repeat 50%;
+              background-size: contain;
             }
         }
     }
+    
   }

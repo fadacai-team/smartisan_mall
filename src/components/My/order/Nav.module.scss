@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    .nav {
+       
+       background-color: white;
+       padding: .45rem .3rem;
+       -webkit-box-shadow: 0 5.33px 13.33px rgba(0,0,0,.08);
+       box-shadow: 0 5.33px 13.33px rgba(0,0,0,.08);
+       border-bottom: .0335rem solid #dedede;
+        .itemWrap{
+            border: 1px solid #E0E0E0;
+            display: flex;
+            border-radius:.3rem ;
+            .navItem {
+                text-align: center;
+                flex: 1;
+                line-height: 1.5rem;
+                height: 1.5rem;
+                border-right: 1px solid #E0E0E0;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            .borderNone{
+                border: none;
+            }
+            .active{
+                background-color: #B0B0B0;
+                color: white; 
+                
+            }
+        }
+      }
+      .content {
+      
+      }
+}

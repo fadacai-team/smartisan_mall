@@ -56,7 +56,8 @@ function getRenderCartList(origin_list,state){
             activety_title:'',
             gifts:gifts,
             checked:true,
-            del:false
+            del:false,
+            spu_id:v.spu_id
         })
     })
     return new_render_list

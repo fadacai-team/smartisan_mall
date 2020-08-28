@@ -1,0 +1,39 @@
+.tips {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+  dt {
+    p {
+      font-size: .95rem;
+      color: rgba(0,0,0,.2);
+      margin: 1.3rem 0 .3rem;
+      font-weight: 700;
+    }
+
+    span {
+      font-size: .75rem;
+      text-align: center;
+      color: rgba(0,0,0,.12);
+    }
+  }
+
+  dd {
+      display: block;
+      position: relative;
+      width: 5.4rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      border-radius: .3rem;
+      font-size: .7rem;
+      color: #fff;
+      margin: .7rem auto 0;
+      background: #5c89f2;
+      -webkit-box-shadow: 0 1.67px 4px rgba(0,0,0,.05), 0 5.33px 13.33px rgba(0,76,255,.04), 0 5.33px 13.33px rgba(0,0,0,.06);
+      box-shadow: 0 1.67px 4px rgba(0,0,0,.05), 0 5.33px 13.33px rgba(0,76,255,.04), 0 5.33px 13.33px rgba(0,0,0,.06);
+      text-shadow: 0 -0.33px 0 rgba(0,0,0,.15);
+      font-weight: 700;
+      text-align: center;
+  }
+}

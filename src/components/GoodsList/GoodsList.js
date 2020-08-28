@@ -29,7 +29,8 @@ export default function GoodsList(props) {
                     activety_title:'',
                     gifts:[],
                     checked:true,
-                    del:false
+                    del:false,
+                    spu_id:v.spu_id
                 })
             })
             setRenderList(list)

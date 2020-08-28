@@ -3,32 +3,36 @@ import axios from "axios"
 import Login from "./login/login"
 import styles from"./My.module.scss"
 import List from "./login/List"
+
 export default class My extends Component {
     constructor(props){
         super(props);
         this.state = {
             arr: [
                 [
-                    {text:"地址管理",link:""},
-                    {text:"我的优惠券",link:""},
-                    {text:"优先购买码",link:""},
+                    {text:"地址管理",path:"/my/location"},
+                    {text:"我的优惠券",path:"/my/ticket"},
+                    {text:"优先购买码",path:""},
                 ],
                 [
-                    {text:"零售门店",link:""},
-                    {text:"以旧换新",link:""},
-                    {text:"常见问题",link:""},
-                    {text:"服务支持",link:""},
+                    {text:"零售门店",path:""},
+                    {text:"以旧换新",path:""},
+                    {text:"常见问题",path:""},
+                    {text:"服务支持",path:""},
                 ],
                 [
-                    {text:"意外碎屏保修服务",link:""},
-                    {text:"延长保修服务",link:""},
-                    {text:"协议政策",link:""},
-                    {text:"资质证照",link:""},
+                    {text:"意外碎屏保修服务",path:""},
+                    {text:"延长保修服务",path:""},
+                    {text:"协议政策",path:""},
+                    {text:"资质证照",path:""},
                 ]
                 
-            ]
+            ],
+         
+            
         }
     }
+   
     handleclick =()=>{
      
      

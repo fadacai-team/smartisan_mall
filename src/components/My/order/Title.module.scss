@@ -1,0 +1,25 @@
+.top {
+    color: #fff;
+    text-align: center;
+    line-height: 2.4rem;
+    position: relative;
+    text-align: center;
+    background-color: #1a1a1a;
+    .back {
+        position: absolute;
+        left: 10px;
+        height: 32px;
+        background-color:#272726;
+        font-size: 12px;
+        cursor: pointer;
+        top: calc(50% - 16px);
+        border-radius: 5px;
+        padding: 5px;
+        line-height: 24px;
+    }
+  
+    .title {
+        font-size: .9rem;
+        font-weight: 700;
+    }
+  }

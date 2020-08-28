@@ -1,0 +1,119 @@
+.orderDetails {
+    margin-bottom: 5px;
+    padding: 10px 10px  5px;
+    background-color: white;
+    color: #6f6f6f;
+    font-size: 12px;
+    .orderTime {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 2rem;
+        font-size: .6rem;
+        color: rgba(0,0,0,.4);
+        font-weight: 700;
+        border-bottom: 1px solid #dedede;
+      dt {
+       
+            span{
+                color: rgba(0,0,0,.6);
+                font-size: .75rem;
+                padding-left: .3rem;
+            }
+      }
+  
+      dd {
+        font-size: .75rem;
+        color: #d44d44;
+        font-weight: 700;
+     
+      }
+    }
+  
+    .orderInfo {
+        height: 5.7rem;
+        border-bottom: 1px solid #dedede;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      dt {
+        width: 4.5rem;
+        height: 4.5rem;
+        display: inline-block;
+       
+       
+        img {
+            width: 100%;
+            height: 100%;
+        }
+      }
+  
+      dd {
+          flex: 5;
+          padding:0 10px;
+
+        .shopTitle {
+            margin-bottom: 10px;
+            padding-right: 10px;;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;//向显示多少行就给多大值
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+  
+        .shopPrice {
+            font-weight: 700;
+            span{
+                font-size: .75rem;
+                color: #d44d44;
+                font-weight: 700;
+            }
+        }
+        
+      }
+      .rightIcon{
+        display: inline-block;
+        width: .3rem;
+        height: .5rem;
+        right: .6rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAITSURBVHgBtZVPS8NAEMV3k0BP6kEtWHu0tZ+hHhWP9ui3VNGPY4WKf0DQU7Qo2Mb30pkwhKTNVn0wnWy2+8vLzmbXuX9QXHHvAPGN+HJ/AU2SZDifz09x2UPcrgu2UAKHURS5LMtavwErdChBoCPYe99C9NAOBkfFRRRlEjkbrjPkjTiOz5HbLkDq9AGOthBtOlW3ohbaA+QJ4iMESo0RW4DtKhjhEXQfIx2i/74JuLykxnSMvCsFKxxjfhMBTxDTEKg63uRUCIzzi+T5EP5/JTiuuX9HMB0LjHAn18kqcB20ANMxVwVNy4rwMk7neBoCVTCrv0e3VnhQYoo3DYE6GUR1DTCf5zrHTaDUo+R9/pRck9G34KZQBXvjOJ9fupbiETwhOASq4MKxdS0fSO44FEo9Se4KrFhydIx2P3HriWs433xQsPwGs7SzdaAniIEF6qeMNrfIi8iFSYH51igfBcX2J4GI18ZQHDXHBIoj25WJw0sCecM3Q7oCKNJxdErglQJt51IgXnNgCmH7UnGYuoonVomH3xGBbNiiyHUqDtPyQL8EOELslDvkUExns1klsA7awmE3wqAyULe9WoeqpAqIL2NbIGWtBFLREqCuQ41GQMob4BleebvmfwRduwZASl9/SIfmrHfijpV+DwFa6JucP+W1GAykdOt7cYup6GSLDVKrfOMCgRZKPUvuiMO1gNQPm18nYBaJHDEAAAAASUVORK5CYII=) no-repeat 50%;
+        background-size: contain;
+    }
+    }
+    
+    .orderPay {
+      font-weight: 700;
+        padding:10px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      dt {
+      
+        span {
+          display: inline-block;
+          margin-left: 5px;
+            font-size: .75rem;
+            color: #d44d44;
+            font-weight: 700;
+        }
+      }
+  
+      dd {
+       
+        .payButton {
+            width: 3.4rem;
+            height: 1.5rem;
+            border-radius: .3rem;
+            text-align: center;
+            line-height: 1.5rem;
+            color: #fff;
+            background: #5c89f2;
+        }
+      }
+    }
+    .colorChange{
+      color: #999999 !important;
+    }
+  }

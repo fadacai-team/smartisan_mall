@@ -48,7 +48,11 @@ function CartItem(props) {
     }
     let render_item= props.item.toJS()
     return (
-        <div className={style.group_sub}>
+        <div className={style.group_sub} onClick={
+            ()=>{
+                props.history.push('/detail/'+render_item.spu_id)
+            }
+        }>
             {
                 props.noTag?"": getGifts()
             }
