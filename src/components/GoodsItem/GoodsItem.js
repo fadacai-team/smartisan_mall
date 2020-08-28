@@ -1,57 +1,61 @@
 import React, { Component } from 'react'
 import styles from './GoodsItem.module.scss'
-export default class GoodsItem extends Component {
-    constructor(props){
-        super(props)
-        // console.log(props)
-    }
-    getPrice(){
-        if(this.props.data.promotionList[0]){
-            if(this.props.data.promotionList[0].tag){
-                return <span className={styles.tag + " " + styles.red }>{this.props.data.promotionList[0].describe}</span>
+import {useSpring, animated, interpolate } from 'react-spring'
+
+const to = i => ({ x: 0, y: 0 , scale: 1, rot: 0, delay: i * 100 })
+const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1200 })
+const trans = (r, s) => `perspective(1500px) rotateX(00deg) rotateY(${0}deg) rotateZ(${0}deg) scale(${s})`
+
+export default function GoodsItem(props){
+    
+        const myanimation = useSpring({to:{opacity: 1,scale:1,transform:'translateY(0)'} , from: {scale:0,opacity: 0,transform:'translateY(50px)',delay:props.index * 200}})
+        const getPrice = ()=>{
+            if(props.data.promotionList[0]){
+                if(props.data.promotionList[0].tag){
+                    return <span className={styles.tag + " " + styles.red }>{props.data.promotionList[0].describe}</span>
+                }else{
+                    return ''
+                }
             }else{
                 return ''
             }
-        }else{
-            return ''
         }
-    }
-    render() {
         return (
             <React.Fragment>
-                {
-                    // console.log(this.props.data)
-                    <section key={this.props.data.skuId} className={styles.flow_item + " " + styles.sku_item + " " + styles.waterfall } >
-                        <figure className={styles.item_cover}>
-                            <aside className={styles.item_promotion_tage + " " + styles.sign}>
+                
+                            <animated.div 
+                                style={ myanimation } 
+                            >
+                                <section key={props.data.skuId} className={styles.flow_item + " " + styles.sku_item + " " + styles.waterfall } >
+                                    <figure className={styles.item_cover}>
+                                        <aside className={styles.item_promotion_tage + " " + styles.sign}>
 
-                            </aside>
-                            <img src={this.props.data.images + '?x-oss-process=image/resize,w_324/format,webp'} className={styles.animation}></img>
-                        </figure>
-                        <article className={styles.item_title + ' ' + styles.two_line}>
-                            <h3>
-                                {this.props.data.skuTitle}
-                            </h3>
-                        </article>
-                        {this.props.data.promotionList === [] ? "jjj" : <aside className={styles.item_promotion_tage}>
-                            {this.getPrice()}
-                            {/* {this.props.data.promotionList[0] ? <span className={styles.tag + " " + styles.red }>{this.props.data.promotionList[0].describe}</span> : ''} */}
-                               
-                        </aside>}
-                        <article className={styles.item_bottom_info}>
-                            <aside className={styles.item_price}>
-                                <span className={styles.discount}>
-                                    ¥{parseFloat(this.props.data.discountPrice)}
-                                    
-                                </span>
-                                {this.props.data.discountPrice === this.props.data.originalPrice ? "" : <span className={styles.originalPrice}>
-                                        ¥{parseFloat(this.props.data.originalPrice)}
-                                        </span>}
-                            </aside>
-                        </article>
-                    </section>
-                }
+                                        </aside>
+                                        <img src={props.data.images + '?x-oss-process=image/resize,w_324/format,webp'} className={styles.animation}></img>
+                                    </figure>
+                                    <article className={styles.item_title + ' ' + styles.two_line}>
+                                        <h3>
+                                            {props.data.skuTitle}
+                                        </h3>
+                                    </article>
+                                    {props.data.promotionList === [] ? "jjj" : <aside className={styles.item_promotion_tage}>
+                                        {getPrice()}
+                                        {/* {props.data.promotionList[0] ? <span className={styles.tag + " " + styles.red }>{props.data.promotionList[0].describe}</span> : ''} */}
+                                    </aside>}
+                                    <article className={styles.item_bottom_info}>
+                                        <aside className={styles.item_price}>
+                                            <span className={styles.discount}>
+                                                ¥{parseFloat(props.data.discountPrice)}
+                                                
+                                            </span>
+                                            {props.data.discountPrice === props.data.originalPrice ? "" : <span className={styles.originalPrice}>
+                                                    ¥{parseFloat(props.data.originalPrice)}
+                                                    </span>}
+                                        </aside>
+                                    </article>
+                                </section>
+                    </animated.div>
+                
             </React.Fragment>
         )
-    }
 }

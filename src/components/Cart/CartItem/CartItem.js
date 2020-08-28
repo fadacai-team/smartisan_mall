@@ -68,9 +68,9 @@ function CartItem(props) {
                     </div>
                 )
             }
-            <div className={style.cart_item_wraper}>
+            <div className={style.cart_item_wraper} style={props.noCheck?{paddingLeft:'.6rem'}:{}}>
                 <div className={style.item_thumb} onClick={()=>{
-                    props.history.push('/goodlist')
+                    // props.history.push('/')
                 }}>
                     <img alt={render_item.name} className="item-thumb-img" height="90" width="90" 
                     src={render_item.imageurl+"?x-oss-process=image/resize,w_180/format,webp"}/>

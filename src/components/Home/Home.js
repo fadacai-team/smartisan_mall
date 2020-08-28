@@ -47,7 +47,6 @@ class Home extends Component {
             this.setState({type:false})
         }
 
-        console.log(e.target.scrollHeight - e.target.scrollTop)
         if(e.target.scrollHeight - e.target.scrollTop<1000 && this.state.loading==false){
             this.setState({loading:true})
             this.setState({page:this.state.page+1},()=>{
@@ -67,7 +66,6 @@ class Home extends Component {
 
         })
         this.props.goodsData().then(()=>{
-            console.log(this.props.Digital)
         })
         axios.get('/mobile/new/home?channel_id=1002').then((data)=>{
             // console.log(data.data)
@@ -82,7 +80,6 @@ class Home extends Component {
             this.setState({full_img:data.data[7].content})
             // this.setState({goodswarp1:data.data[4]})
             // this.setState({goodswarp2:data.data[5]})
-            console.log(this.state.title1)
             setInterval(()=>{
                 if(this.state.title1.activityInfo){
                     (this.state.title1.activityInfo.surplusTime --)
@@ -412,7 +409,7 @@ class Home extends Component {
                         <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>
                         {/* 首页商品列表开始 */}
-                            <List page={this.state.page} goodsItem={this.props.goodsItem} goodsWater1={this.props.goodsWater1}></List>
+                            <List loading={this.state.loading} page={this.state.page} goodsItem={this.props.goodsItem} goodsWater1={this.props.goodsWater1}></List>
                         {/* 首页商品列表结束 */}
                     </div>
                     {/* 首页内容结束 */}
