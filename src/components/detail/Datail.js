@@ -17,6 +17,7 @@ import ToCart from './ToCart'
 
 
 function Datail (props){
+    
     let [shopNum,setShopNum] = useState(0)
     let showShopMount = () => {
         axios.get('http://119.29.81.194/data/showCart.php').then((res) => {
@@ -33,7 +34,7 @@ function Datail (props){
     var body = useRef()
     var mask = useRef()
     useEffect(() => {
-        props.setAllData(123)
+        props.setAllData(props.match.params.id)
         showShopMount()
         mask.current.onmousewheel=function() {return false}
         mask.current.style.touchAction = 'none'
@@ -196,11 +197,26 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setAllData:(ids)=>{
-            ids = '1000594'
-            axios.get('https://shopapi.smartisan.com/product/skus?ids=100039715,100053202,100060204,100060401,100061001,100061002,100061003,100068101,100069301,100069302,100080602,100141102,100144701&with_stock=true&with_spu=true')
-            .then((res) => {
-                dispatch(detailAction(res.data.list))
+            axios.get('/product/spus?ids='+ids).then((res) => {
+                console.log(res)
+                var str = ''
+                res.data.list[0].sku_info.forEach((item,index) => {
+                    if(index<res.data.list[0].sku_info.length-1){
+                        str += item.sku_id + ','
+                    }else{
+                        str += item.sku_id
+                    }
+                })
+                console.log(str)
+                axios.get('/product/skus?ids='+str+'&with_stock=true&with_spu=true').then((res) => {
+                    dispatch(detailAction(res.data.list))
+                }
+                )
             })
+            // axios.get('/product/skus?ids=100039715,100053202,100060204,100060401,100061001,100061002,100061003,100068101,100069301,100069302,100080602,100141102,100144701&with_stock=true&with_spu=true')
+            // .then((res) => {
+            //     dispatch(detailAction(res.data.list))
+            // })
         },
         activeHandleClick:(isShow,optionType,buttonType) => {
             dispatch(activeAction(isShow,optionType,buttonType))
