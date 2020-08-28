@@ -1,0 +1,19 @@
+.proDetail{
+    background-color: #fff;
+    .title{
+        height: 40px;
+        line-height: 40px;
+        font-size: .75rem;
+        font-weight: 700;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        padding: 0 .6rem;
+    }
+    .item{
+        display: block;
+        width: 100%;
+    }
+}
