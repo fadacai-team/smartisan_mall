@@ -10,7 +10,7 @@ import {GoodsROWData} from '../../store/actionCreate/goodswarp'
 
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import GoodsRow from '../GoodsRow/GoodsRow'
-import List from "../List/List"
+import List from "../List/ist"
 class Home extends Component {
     // constructor(props){
     //     super(props)
@@ -366,13 +366,13 @@ class Home extends Component {
                         {/* ImgWarp开始 */}
                             {/* <ImgWarp></ImgWarp> */}
                         {/* ImgWarp结束 */}
-                            <GoodsRow data={this.props.Digital}></GoodsRow>
-                        <section className={styles.has_margin_bottom}></section>
-                        <section className={styles.has_margin_top}></section>
-                            <GoodsRow data={this.props.Electric}></GoodsRow> 
-                        <section className={styles.has_margin_bottom}></section>
-                        <section className={styles.has_margin_top}></section>
-                            <GoodsRow data={this.props.Kitchenware}></GoodsRow> 
+                            {/* <GoodsRow data={this.props.Digital}></GoodsRow> */}
+                        {/* <section className={styles.has_margin_bottom}></section>
+                        <section className={styles.has_margin_top}></section> */}
+                            {/* <GoodsRow data={this.props.Electric}></GoodsRow>  */}
+                        {/* <section className={styles.has_margin_bottom}></section>
+                        <section className={styles.has_margin_top}></section> */}
+                            {/* <GoodsRow data={this.props.Kitchenware}></GoodsRow>  */}
                         {/* <section className={styles.has_margin_bottom}></section>
                         <section className={styles.has_margin_top}></section>
                             <GoodsRow data={this.props.Kitchenware}></GoodsRow>  */}
