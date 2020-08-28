@@ -9,7 +9,8 @@ import ImgWarp from '../imgWarp/ImgWarp'
 import GoodsWarp from '../GoodsWarp/GoodsWarp'
 import {goodsWater} from '../../store/actionCreate/goodswarp'
 
-import List from "../List/List"
+import GoodsRow from '../GoodsRow/GoodsRow'
+import List from "../list/List"
 class Home extends Component {
 
     state = {

@@ -8,10 +8,16 @@
       margin-bottom: .65rem;
       margin-top: .25rem;
     .loginTop {
-        padding: 14px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      height: 4.15rem;
+      border-radius: .4rem .4rem 0 0;
+      font-size: .85rem;
+      color: #333;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: 1px solid #f6f6f6;
     .loginLeft{
         display: flex;
         align-items: center;
@@ -25,18 +31,52 @@
       
           .loginText {
           padding-left: .9rem;
-            font-size: 18px;
             font-weight: 700;
+            font-size: .85rem;
+            color: rgba(0,0,0,.8);
           }
     }
   
       .loginRight {
-        
+        display: inline-block;
+        width: .3rem;
+        height: .5rem;
+        right: .6rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAITSURBVHgBtZVPS8NAEMV3k0BP6kEtWHu0tZ+hHhWP9ui3VNGPY4WKf0DQU7Qo2Mb30pkwhKTNVn0wnWy2+8vLzmbXuX9QXHHvAPGN+HJ/AU2SZDifz09x2UPcrgu2UAKHURS5LMtavwErdChBoCPYe99C9NAOBkfFRRRlEjkbrjPkjTiOz5HbLkDq9AGOthBtOlW3ohbaA+QJ4iMESo0RW4DtKhjhEXQfIx2i/74JuLykxnSMvCsFKxxjfhMBTxDTEKg63uRUCIzzi+T5EP5/JTiuuX9HMB0LjHAn18kqcB20ANMxVwVNy4rwMk7neBoCVTCrv0e3VnhQYoo3DYE6GUR1DTCf5zrHTaDUo+R9/pRck9G34KZQBXvjOJ9fupbiETwhOASq4MKxdS0fSO44FEo9Se4KrFhydIx2P3HriWs433xQsPwGs7SzdaAniIEF6qeMNrfIi8iFSYH51igfBcX2J4GI18ZQHDXHBIoj25WJw0sCecM3Q7oCKNJxdErglQJt51IgXnNgCmH7UnGYuoonVomH3xGBbNiiyHUqDtPyQL8EOELslDvkUExns1klsA7awmE3wqAyULe9WoeqpAqIL2NbIGWtBFLREqCuQ41GQMob4BleebvmfwRduwZASl9/SIfmrHfijpV+DwFa6JucP+W1GAykdOt7cYup6GSLDVKrfOMCgRZKPUvuiMO1gNQPm18nYBaJHDEAAAAASUVORK5CYII=) no-repeat 50%;
+        background-size: contain;
       }
     }
   
     .menu {
-     
+      border-top: 1px solid #f4f4f4;
+      display: flex;
+      justify-content: center;
+      .menuItem{
+        text-align: center;
+        flex: 1;
+        border-right: 1px solid #f4f4f4;
+        padding: .45rem 0;
+        font-size: .5rem;
+        dt{
+          margin-bottom: .4rem;
+         img{
+          width: 1.0rem;
+          height: 1.0rem;
+          display: block;
+          margin: 0 auto;
+         }
+        }
+        dd{
+          color: rgba(0,0,0,.4);
+          font-weight: 700;
+          line-height: .65rem;
+          margin-top: .2rem;
+          display: block;
+        }
+      }
+      .borderNone{
+        border-right: none;
+      }
     }
   }
   .not-square-grid .am-grid-icon {

@@ -1,0 +1,93 @@
+.address {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2f2f2;
+    .content {
+        padding:5px 10px;
+      .iptWrap {
+        margin-top: .7rem;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,.08);
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 8px;
+        background: #fff;
+        overflow: hidden;
+        .inputItem {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            padding: 0 .9rem;
+            border-bottom: 1px solid rgba(0,0,0,.08);
+          input {
+            display: block;
+            width: 100%;
+            height: 2.15rem;
+            font-size: .75rem;
+            background: transparent;
+            border: none;
+            outline: none;
+            &:-ms-input-placeholder{
+                color: #d9d9d9;
+            }
+            &::-webkit-input-placeholder{
+                color: #d9d9d9;
+            }
+          }
+          .cityChoose{
+            font-size: .75rem;
+            width: 100%;
+            height: 2.15rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+              display: inline-block;
+              color: rgba(0,0,0,.8);
+              font-size: .75rem;
+              font-weight: 700;
+            }
+            .localSelect{
+            float: right;
+            }
+          }
+          
+        }
+        
+      }
+      .radio{
+       label{
+        color: #616161;
+        font-weight: 700;
+        margin-top: 3px;
+       }
+     
+     
+      }
+      .checkButton{
+        cursor: pointer;
+        background-color: #5985eb;
+       border: .0335rem solid #3a6be6;
+       color: #fff;
+       height: 2.4rem;
+       line-height: 2.4rem;
+       padding: 0 1.25rem;
+       border-radius: .4rem;
+       font-size: .8rem;
+       font-weight: 700;
+       text-align: center;
+       margin-top: 10px;
+       &:disabled{
+         background-color: #c4d2f0;
+         border: .0335rem solid #c4d2f0;
+       }
+      }
+    }
+   
+  }
+
+  .show{
+      display: block !important;
+  }
+  .hidden{
+      display: none !important;
+  }
