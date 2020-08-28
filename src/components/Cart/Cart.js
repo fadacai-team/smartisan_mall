@@ -8,7 +8,7 @@ import {
     updateCartCodeList
 } from '../../store/actionCreate/cart'
 import axios from '../../Utils/myaxios'
-import {Map} from 'immutable'
+// import {Map} from 'immutable'
 import TitleBar from '../Common/TitleBar/TitleBar'
 import BottomBar from './CartBottomBar/CartBottomBar'
 

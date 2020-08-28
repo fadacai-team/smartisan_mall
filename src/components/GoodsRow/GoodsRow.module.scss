@@ -1,0 +1,28 @@
+.goods_row_warp{
+    overflow: hidden;
+    .module_title_warp{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+        padding: 0 1.2rem;
+        cursor: pointer;
+        height: 1.8rem;
+    }
+    .goods_scroll{
+        -webkit-transform: translateY(.4rem);
+        transform: translateY(.4rem);
+        padding-bottom: .4rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+    }
+    .common_flex_box{
+        display: flex;
+    }
+}
